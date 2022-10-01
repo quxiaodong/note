@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    /*
+     * UI设计稿 1440 * 720
+     * 实际尺寸 / 1440 * 10
+     * 假设Div尺寸 1440 * 720
+     * 1440 / 1440 * 10 = 10rem
+     *  720 / 1440 * 10 = 5rem
+    */
+    .container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 10rem;
+      height: 5rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: space-between;
+      justify-content: space-between;
+      background: lightslategray;
+    }
+    .block {
+      width: 4.86rem;
+      height: 1.5rem;
+      font-size: 0.16rem;
+      background: lightblue;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="block">1</div>
+    <div class="block">2</div>
+    <div class="block">3</div>
+    <div class="block">4</div>
+    <div class="block">5</div>
+    <div class="block">6</div>
+  </div>
+  <script>
+    const scale = 1440 / 720 // UI设计稿
+    const docEl = document.documentElement
+
+    function setFontSize() {
+      const { clientWidth, clientHeight } = docEl
+      const newScale = clientWidth / clientHeight
+      const fontSize = newScale > scale ? (clientHeight / 10 * scale) : (clientWidth / 10)
+      docEl.style.fontSize = fontSize + 'px'
+    }
+
+    setFontSize()
+    window.addEventListener('resize', setFontSize)
+  </script>
+</body>
+</html>

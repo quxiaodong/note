@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      width: 100px;
+      height: 100px;
+    }
+    .left, .right {
+      width: 50px;
+      height: 100px;
+      overflow: hidden;
+    }
+    .left .circle,
+    .right .circle {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border-width: 2px;
+      border-style: solid;
+      box-sizing: border-box;
+    }
+    .left .circle {
+      transform: rotate(-45deg);
+      left: 0;
+      border-color: transparent pink pink transparent;
+    }
+    .right .circle {
+      transform: rotate(-45deg);
+      right: 50px;
+      border-color: pink transparent transparent pink;
+    }
+
+    .input-wrap {
+      display: flex;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .input-wrap #input {
+      width: 60px;
+    }
+    button {
+      appearance: none;
+      -webkit-appearance : none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left">
+      <div class="circle" id="leftCircle"></div>
+    </div>
+    <div class="right">
+      <div class="circle" id="rightCircle"></div>
+    </div>
+    <div class="input-wrap">
+      <input value="3" type="text" id="input" placeholder="正整数">
+      <button id="btn">开始</button>
+    </div>
+  </div>
+  <script>
+    const btn = document.getElementById('btn')
+    const input = document.getElementById('input')
+
+    const leftCircle = document.getElementById('leftCircle')
+    const rightCircle = document.getElementById('rightCircle')
+
+    const timeout = 100 // 每隔100ms更新进度环
+
+    let leftRotate, rightRotate, circleStep, timer
+
+    btn.addEventListener('click', () => {
+      if (input.value === '' || isNaN(input.value) || parseFloat(input.value) === 0) {
+        return
+      }
+      console.clear()
+      // 清除定时器
+      timer && clearTimeout(timer)
+      // 初始化参数
+      resetLoading()
+      // 开始加载
+      console.log('loading end...', new Date())
+      startLoading()
+    })
+
+    function startLoading() {
+      if (rightRotate < 135) {
+        const rotate = rightRotate + circleStep
+        rightRotate = rotate > 135 ? 135 : rotate
+
+        rightCircle.style.transform = `rotate(${rightRotate}deg)`
+      } else if (leftRotate < 135) {
+        const rotate = leftRotate + circleStep
+        leftRotate = rotate > 135 ? 135 : rotate
+
+        leftCircle.style.transform = `rotate(${leftRotate}deg)`
+      }
+
+      if (rightRotate >= 135 && leftRotate >= 135) {
+        console.log('loading end...', new Date())
+        clearTimeout(timer)
+      } else {
+        timer = setTimeout(startLoading, timeout)
+      }
+    }
+
+    function resetLoading() { // 重置圆环初始旋转状态
+      leftRotate = -45
+      rightRotate = -45
+      leftCircle.style.transform = `rotate(${leftRotate}deg)`
+      rightCircle.style.transform = `rotate(${rightRotate}deg)`
+
+      // 假设倒计时2秒=2000ms，每个圆环是1000ms
+      // 当timeout=100ms时
+      // 每个圆环走完需要 1000 / 100 = 10次
+      // 每个圆环旋转都是从-45旋转到135即180度
+      // 所以circleStep = 180 / 10 = 18deg
+      circleStep = 180 / (input.value * 1000 / 2 / timeout ) // 这里会产生除不尽的情况，导致精度问题
+      console.log('circleStep', circleStep)
+    }
+  </script>
+</body>
+</html>

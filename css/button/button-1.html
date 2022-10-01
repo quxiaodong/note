@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background: lightcoral;
+    }
+    .button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 160px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      border-radius: 8px;
+      color: #333;
+      background: #fff;
+      font-weight: bold;
+      overflow: hidden;
+      cursor: pointer;
+      transition: color .2s;
+    }
+    .button::after {
+      content: '';
+      position: absolute;
+      top: 90%;
+      left: 0;
+      z-index: -1;
+      width: 0;
+      height: 100%;
+      background: linear-gradient(to right, #8E54E9, #4776E6);
+    }
+    .button.ing::after {
+      transition: width 4s linear, top .2s linear;
+      width: 100%;
+    }
+    .button.end {
+      color: #fff;
+    }
+    .button.end::after {
+      top: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="button">download</div>
+  <script>
+    const button = document.querySelector('.button')
+
+    button.addEventListener('click', () => {
+      button.classList.add('ing')
+
+      setTimeout(() => {
+        button.classList.add('end')
+      }, 4000)
+
+      setTimeout(() => {
+        button.className = 'button'
+      }, 6000)
+    })
+  </script>
+</body>
+</html>

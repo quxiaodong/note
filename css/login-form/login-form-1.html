@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .form {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 40px;
+      width: 80%;
+      max-width: 400px;
+      box-sizing: border-box;
+      border-radius: 10px;
+      background: rgba(0, 0, 0, .8);
+      box-shadow: 0 15px 25px rgba(0, 0, 0, .5);
+    }
+    .input-wrapper {
+      position: relative;
+      margin-bottom: 30px;
+      border-bottom: 1px solid #fff;
+    }
+    .input {
+      padding: 10px 0;
+      width: 100%;
+      border: none;
+      outline: none;
+      color: #fff;
+      background: none;
+    }
+    .label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 10px 0;
+      font-size: 16px;
+      pointer-events: none;
+      color: #fff;
+      transition: .5s;
+    }
+    .input:focus ~ label,
+    .input:valid ~ label { /* valid基于input的required */
+      top: -18px;
+      color: #03a9f4;
+      font-size: 12px;
+    }
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      color: #fff;
+      background: #03a9f4;
+    }
+  </style>
+</head>
+<body>
+  <form class="form">
+    <div class="input-wrapper">
+      <input type="text" required autocomplete="off" class="input">
+      <label class="label">Username</label>
+    </div>
+    <div class="input-wrapper">
+      <input type="password" required autocomplete="new-password" class="input">
+      <label class="label">Password</label>
+    </div>
+    <div class="button">Submit</div>
+  </form>
+</body>
+</html>

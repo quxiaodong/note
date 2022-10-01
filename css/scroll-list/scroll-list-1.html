@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80vw;
+      height: 100px; /* 每项高度20，一共5项 */
+      overflow: hidden;
+    }
+    .button {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
+    .list {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 60%;
+    }
+    .list-item {
+      height: 20px;
+      line-height: 20px;
+      text-align: center;
+      box-sizing: border-box;
+      font-size: 10px;
+      background: lightcoral;
+      border-bottom: 1px solid #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="list"></div>
+    <button class="button">插入</button>
+  </div>
+  <script>
+    const container = document.querySelector('.container')
+    const button = container.querySelector('.button')
+    const list = container.querySelector('.list')
+
+    let y = 0
+    let timer = null
+    let data = [
+      '默认内容 - 1', '默认内容 - 2', '默认内容 - 3', '默认内容 - 4', '默认内容 - 5'
+    ]
+
+    function initData() {
+      const temp = []
+      while(data.length && temp.length < 5) {
+        temp.push(...data)
+      }
+      // 取最后面5条数据
+      data = temp.splice(-5)
+    }
+
+    function appendDom() {
+      data.forEach(item => {
+        const div = document.createElement('div')
+        div.className = 'list-item'
+        div.innerText = item
+
+        list.appendChild(div)
+      })
+    }
+
+    function removeDom() {
+      const items = list.querySelectorAll('.list-item')
+      for(let i = 0; i < 5; i++) {
+        list.removeChild(items[i])
+      }
+    }
+
+    function scrollList() {
+      // 100是container容器高度，也是5条数据的总高度
+      if (y > -100) {
+        // 可以调节滚动速度
+        y -= 0.1
+      } else {
+        // 生成最新的5条数据
+        initData()
+        // 移除最上面的5项dom
+        removeDom()
+        // 插入最下面的5项dom
+        appendDom()
+        // 重置translateY
+        y = 0
+      }
+      list.style.transform = `translateY(${y}px)`
+      timer && (timer = requestAnimationFrame(scrollList))
+    }
+
+    list.onmouseenter = function() {
+      cancelAnimationFrame(timer)
+      timer = null
+    }
+    list.onmouseleave = function() {
+      timer = requestAnimationFrame(scrollList)
+    }
+    let uid = 0
+    button.onclick = function() {
+      data.push(`插入内容 - ${++uid}`)
+    }
+
+    function init() {
+      initData()
+      // 生成两份dom
+      appendDom()
+      appendDom()
+    }
+
+    init()
+    timer = requestAnimationFrame(scrollList)
+  </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      min-height: 100vh;
+      background: #001d10;
+      animation: animateBackground 10s linear infinite;
+    }
+    .loading {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 100px;
+    }
+    .blocks {
+      position: absolute;
+      left: 50%;
+      transform: rotate(calc(18deg * var(--i))); /* 360 / 20block */
+      transform-origin: 0 50px; /* 100px / 2 */
+      animation: animate 1.9s ease-in-out infinite;
+      animation-delay: calc(0.05s * var(--i)); /* 1 / 20 */
+      width: 3px;
+      height: 10px;
+      border-radius: 2px;
+      background: #050c09;
+    }
+    @keyframes animate {
+      0%, 50% {
+        background: #050c09;
+        box-shadow: none;
+      }
+      50.1%, 100% {
+        background: #0f0;
+        box-shadow: 0 0 5px #0f0,
+                    0 0 15px #0f0,
+                    0 0 30px #0f0,
+                    0 0 60px #0f0,
+                    0 0 90px #0f0;
+      }
+    }
+    @keyframes animateBackground {
+      0% {
+        filter: hue-rotate(0deg);
+      }
+      100% {
+        filter: hue-rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="loading">
+      <div class="blocks" style="--i: 1;"></div>
+      <div class="blocks" style="--i: 2;"></div>
+      <div class="blocks" style="--i: 3;"></div>
+      <div class="blocks" style="--i: 4;"></div>
+      <div class="blocks" style="--i: 5;"></div>
+      <div class="blocks" style="--i: 6;"></div>
+      <div class="blocks" style="--i: 7;"></div>
+      <div class="blocks" style="--i: 8;"></div>
+      <div class="blocks" style="--i: 9;"></div>
+      <div class="blocks" style="--i: 10;"></div>
+      <div class="blocks" style="--i: 11;"></div>
+      <div class="blocks" style="--i: 12;"></div>
+      <div class="blocks" style="--i: 13;"></div>
+      <div class="blocks" style="--i: 14;"></div>
+      <div class="blocks" style="--i: 15;"></div>
+      <div class="blocks" style="--i: 16;"></div>
+      <div class="blocks" style="--i: 17;"></div>
+      <div class="blocks" style="--i: 18;"></div>
+      <div class="blocks" style="--i: 19;"></div>
+      <div class="blocks" style="--i: 20;"></div>
+    </div>
+  </div>
+</body>
+</html>

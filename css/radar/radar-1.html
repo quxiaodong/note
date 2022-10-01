@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .radar {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 1px solid rgb(155, 246, 254);
+      box-sizing: border-box;
+    }
+    .radar::after {
+      content: "";
+      height: 50%;
+      width: 50%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      border-right: 1px solid rgb(155, 246, 254);
+      background: linear-gradient(rgb(155, 246, 254), transparent);
+      border-radius: 100% 0 0 0;
+      box-sizing: border-box;
+      transform-origin: bottom right;
+      animation: rotate 2s linear infinite;
+    }
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="radar"></div>
+</body>
+</html>
