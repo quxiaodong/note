@@ -3,6 +3,7 @@
 - [chart](/css/chart/README.md)
 - [circle-loading](/css/circle-loading/README.md)
 - [data-screen](/css/data-screen/README.md)
+- [flex](/css/flex/README.md)
 - [loading](/css/loading/README.md)
 - [login-form](/css/login-form/README.md)
 - [radar](/css/radar/README.md)

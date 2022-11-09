@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      height: 100%;
+    }
+    .style {
+      height: 30%;
+      display: block;
+      overflow: auto;
+    }
+    .container {
+      height: 70%;
+      background: black;
+    }
+    .item {
+      width: 80px;
+      height: 24px;
+      line-height: 24px;
+      text-align: center;
+      font-size: 12px;
+    }
+    .item1 {
+      background-color: red;
+    }
+    .item2 {
+      background-color: green;
+    }
+    .item3 {
+      background-color: orange;
+    }
+  </style>
+</head>
+<body>
+  <style contenteditable class="style">
+    .container { display: flex; }
+    .item1 { order: 3; }
+    .item2 { order: 2; }
+    .item3 { order: 1; }
+  </style>
+  <div class="container">
+    <div class="item item1">item1-3</div>
+    <div class="item item2">item2-2</div>
+    <div class="item item3">item3-1</div>
+  </div>
+</body>
+</html>
