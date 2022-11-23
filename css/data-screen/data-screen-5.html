@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 1440px;
+      height: 720px;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: space-between;
+      justify-content: space-between;
+      background: lightslategray;
+    }
+    .block {
+      width: 700px;
+      height: 200px;
+      font-size: 24px;
+      background: lightblue;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="block">1</div>
+    <div class="block">2</div>
+    <div class="block">3</div>
+    <div class="block">4</div>
+    <div class="block">5</div>
+    <div class="block">6</div>
+  </div>
+  <script>
+    const scale = 1440 / 720 // UI设计稿
+    const docEl = document.documentElement
+    const container = document.querySelector('.container')
+
+    function setZoom() {
+      const { clientWidth, clientHeight } = docEl
+      const newScale = clientWidth / clientHeight
+      const value = newScale > scale ? (clientHeight / 720) : (clientWidth / 1440)
+      container.style.zoom = value
+    }
+
+    setZoom()
+    window.addEventListener('resize', setZoom)
+  </script>
+</body>
+</html>
