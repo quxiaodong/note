@@ -1,3 +1,4 @@
 - [info](/npm/info.md)
+- [registry](/npm/registry.md)
 - [version](/npm/version.md)
 - [view](/npm/view.md)
