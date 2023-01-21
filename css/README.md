@@ -8,3 +8,4 @@
 - [login-form](/css/login-form/README.md)
 - [radar](/css/radar/README.md)
 - [scroll-list](/css/scroll-list/README.md)
+- [sticky-footer](/css/sticky-footer/README.md)
