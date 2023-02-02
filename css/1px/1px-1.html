@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      height: 100%;
+    }
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+    .container {
+      position: relative;
+      width: 40vw;
+      height: 50vh;
+      box-sizing: border-box;
+    }
+    .px-1::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      border: 1px solid #000;
+      transform: scale(0.5);
+      transform-origin: left top;
+      border-radius: 10px;
+    }
+    .border {
+      border-radius: 10px;
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="container px-1"></div>
+  <div class="container border"></div>
+</body>
+</html>
