@@ -1,0 +1,1 @@
+- [object](/typescript/object.md)

@@ -4,3 +4,4 @@
 - [linux](/linux/README.md)
 - [miniprogram](/miniprogram/README.md)
 - [npm](/npm/README.md)
+- [typescript](/typescript/README.md)
