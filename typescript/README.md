@@ -1,1 +1,2 @@
+- [enum](/typescript/enum.md)
 - [object](/typescript/object.md)
