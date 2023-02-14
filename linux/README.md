@@ -70,6 +70,7 @@ man touch
 | [cd](/linux/cd.md) | change directory | 切换目录 |
 | [clear](/linux/clear.md) | clear | 清屏 |
 | [cp](/linux/cp.md) | copy | 复制文件或文件夹 |
+| [ln](/linux/ln.md) | link | 创建链接 |
 | [ls](/linux/ls.md) | list | 查看当前目录的内容 |
 | [mkdir](/linux/mkdir.md) | make directory | 新建文件夹 |
 | [more](/linux/more.md) | more | 分屏显示文件内容 |
