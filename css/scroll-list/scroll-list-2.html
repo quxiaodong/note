@@ -38,6 +38,13 @@
       background: lightcoral;
       border-bottom: 1px solid #fff;
     }
+    .animate {
+      animation: animate 10s linear forwards;
+    }
+    @keyframes animate {
+      0% { top: 0; }
+      100% { top: -100%; }
+    }
   </style>
 </head>
 <body>
@@ -50,8 +57,6 @@
     const button = container.querySelector('.button')
     const list = container.querySelector('.list')
 
-    let y = 0
-    let timer = null
     const num = 5 // 一屏显示5条数据
     let data = [
       '默认内容 - 1', '默认内容 - 2', '默认内容 - 3', '默认内容 - 4', '默认内容 - 5'
@@ -84,27 +89,20 @@
       }
     }
 
-    function scrollList() {
-      // 100是container容器高度，也是5条数据的总高度
-      if (y > -100) {
-        // 可以调节滚动速度
-        y -= 0.1
-      } else {
-        initData()
-        removeDom()
-        appendDom()
-        y = 0
-      }
-      list.style.transform = `translateY(${y}px)`
-      timer && (timer = requestAnimationFrame(scrollList))
-    }
-
     list.onmouseenter = function() {
-      cancelAnimationFrame(timer)
-      timer = null
+      list.style.animationPlayState = 'paused'
     }
     list.onmouseleave = function() {
-      timer = requestAnimationFrame(scrollList)
+      list.style.animationPlayState = ''
+    }
+    list.onanimationend = function() {
+      list.classList.remove('animate')
+      initData()
+      removeDom()
+      appendDom()
+      setTimeout(() => {
+        list.classList.add('animate')
+      })
     }
 
     let uid = 0
@@ -117,7 +115,7 @@
       // 生成两份dom
       appendDom()
       appendDom()
-      timer = requestAnimationFrame(scrollList)
+      list.classList.add('animate')
     }
 
     init()
