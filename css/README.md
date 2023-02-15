@@ -12,3 +12,4 @@
 - [radar](/css/radar/README.md)
 - [scroll-list](/css/scroll-list/README.md)
 - [sticky-footer](/css/sticky-footer/README.md)
+- [vertical-center](/css/vertical-center/README.md)
