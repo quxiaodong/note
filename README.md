@@ -1,4 +1,3 @@
-- [assets](/assets/README.md)
 - [css](/css/README.md)
 - [git](/git/README.md)
 - [java](/java/README.md)
@@ -6,3 +5,4 @@
 - [miniprogram](/miniprogram/README.md)
 - [npm](/npm/README.md)
 - [typescript](/typescript/README.md)
+- [website](/website/README.md)
