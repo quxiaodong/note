@@ -1,1 +1,1 @@
-![](./static/branch-model.png)
+![https://nvie.com/posts/a-successful-git-branching-model/](./static/branch-model.png)
