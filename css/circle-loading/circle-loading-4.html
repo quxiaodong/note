@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      width: 100px;
+      height: 100px;
+    }
+    .svg {
+      position: relative;
+      transform: rotate(-90deg);
+    }
+    .circle {
+      stroke-dasharray: 314; /* 圆的周长 2 * 3.14 * 50(容器的一半) */
+      stroke-dashoffset: 314;
+      transition: all linear;
+    }
+    .input-wrap {
+      display: flex;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .input-wrap #input {
+      width: 60px;
+    }
+    button {
+      appearance: none;
+      -webkit-appearance : none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <svg width="100%" height="100%" class="svg">
+      <circle class="circle" id="circle" cx="50%" cy="50%" r="calc(50% - 1px)" fill="transparent" stroke="pink" stroke-width="2" />
+    </svg>
+    <div class="input-wrap">
+      <input value="3" type="text" id="input" placeholder="正整数">
+      <button id="btn">开始</button>
+    </div>
+  </div>
+  <script>
+    const btn = document.getElementById('btn')
+    const input = document.getElementById('input')
+
+    const circle = document.getElementById('circle')
+
+    btn.addEventListener('click', () => {
+      if (input.value === '' || isNaN(input.value) || parseFloat(input.value) === 0) {
+        return
+      }
+
+      circle.style.removeProperty('transition-duration')
+      circle.style.removeProperty('stroke-dashoffset')
+
+      setTimeout(() => {
+        circle.style.transitionDuration = input.value + 's'
+        circle.style.strokeDashoffset = 0
+      }, 0)
+    })
+  </script>
+</body>
+</html>
