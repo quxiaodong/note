@@ -51,3 +51,7 @@
 - dribbble.com
 - undraw.co
 - error404.fun
+
+#### waves
+
+- getwaves.io
