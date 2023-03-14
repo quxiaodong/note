@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      height: 100%;
+    }
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+    .container {
+      position: relative;
+      width: 40vw;
+      height: 50vh;
+      box-sizing: border-box;
+    }
+    .border-1px {
+      border-radius: 10px;
+      box-shadow:
+        /* x 偏移量 | y 偏移量 | 阴影模糊半径 | 阴影扩散半径 | 阴影颜色 */
+        0 -1px 1px -1px #000, /* 上 */
+        1px 0 1px -1px #000, /* 右 */
+        0 1px 1px -1px #000, /* 下 */
+        -1px 0 1px -1px #000; /* 左 */
+    }
+    .border {
+      border-radius: 10px;
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="container border-1px"></div>
+  <div class="container border"></div>
+</body>
+</html>
