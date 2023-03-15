@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      height: 100%;
+      background-color: rgb(23 23 23);
+    }
+    .clock {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      user-select: none;
+      opacity: 0;
+    }
+    .card {
+      position: relative;
+      display: flex;
+      text-align: center;
+      overflow: hidden;
+      border-radius: 2vmin;
+      color: rgb(245 245 245);
+      background-color: rgb(38 38 38);
+    }
+    .card::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0%;
+      z-index: 10;
+      width: 100%;
+      height: 2px;
+      background-color: rgb(23 23 23);
+    }
+    /* 时分秒字体大小 */
+    .hours, .minutes {
+      width: 40vmin;
+      font-size: 30vmin;
+    }
+    .minutes {
+      margin-left: 4vmin;
+    }
+    .seconds {
+      width: 10vmin;
+      margin-left: 4vmin;
+      font-size: 6vmin;
+    }
+    /* 每个数字卡片 */
+    .card .top, .card .bottom {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background-color: rgb(38 38 38);
+      transform-style: preserve-3d;
+    }
+    .card .top {
+      top: 0;
+    }
+    .card .bottom {
+      bottom: 0;
+      line-height: 0;
+    }
+    /* 动画初始值 */
+    .card .top-front {
+      z-index: 2;
+      transform: rotateX(0);
+      transform-origin: bottom center;
+    }
+    .card .bottom-front {
+      z-index: 2;
+      transform: rotateX(90deg);
+      transform-origin: top center;
+    }
+    .card.active .top-front {
+      transform: rotateX(90deg);
+      transition: transform .4s linear;
+    }
+    .card.active .bottom-front {
+      transform: rotateX(0deg);
+      transition: transform .4s .4s linear;
+    }
+  </style>
+</head>
+<body>
+  <div id="clock" class="clock">
+    <div class="card hours">
+      <div class="top top-front"></div>
+      <div class="bottom bottom-front"></div>
+      <div class="top top-back"></div>
+      <div class="bottom bottom-back"></div>
+      <div>0</div>
+    </div>
+    <div class="card minutes">
+      <div class="top top-front"></div>
+      <div class="bottom bottom-front"></div>
+      <div class="top top-back"></div>
+      <div class="bottom bottom-back"></div>
+      <div>0</div>
+    </div>
+    <div class="card seconds">
+      <div class="top top-front"></div>
+      <div class="bottom bottom-front"></div>
+      <div class="top top-back"></div>
+      <div class="bottom bottom-back"></div>
+      <div>0</div>
+    </div>
+  </div>
+  <script>
+    window.addEventListener('click', () => {
+      document.documentElement.requestFullscreen()
+    })
+
+    const clockEl = document.getElementById('clock')
+    const cards = document.getElementsByClassName('card')
+    const topFronts = document.getElementsByClassName('top-front')
+    const bottomFronts = document.getElementsByClassName('bottom-front')
+    const topBacks = document.getElementsByClassName('top-back')
+    const bottomBacks = document.getElementsByClassName('bottom-back')
+
+    const clock = {
+      0: '',
+      1: '',
+      2: ''
+    }
+
+    function defineProperty(obj, key, value) {
+      Object.defineProperty(obj, key, {
+        set(newValue) {
+          if (value !== newValue) {
+            value = newValue
+
+            topBacks[key].textContent = newValue
+            bottomFronts[key].textContent = newValue
+            cards[key].classList.add('active')
+
+            setTimeout(() => {
+              topFronts[key].textContent = newValue
+              bottomBacks[key].textContent = newValue
+              cards[key].classList.remove('active')
+            }, 800)
+          }
+        }
+      })
+    }
+
+    Object.keys(clock).forEach(key => {
+      defineProperty(clock, key, clock[key])
+    })
+
+    let timer = requestAnimationFrame(function fn() {
+      const date = new Date()
+      const h = (date.getHours() + '').padStart(2, '0')
+      const m = (date.getMinutes() + '').padStart(2, '0')
+      const s = (date.getSeconds() + '').padStart(2, '0')
+
+      ;[h, m, s].forEach((value, index) => {
+        clock[index] = value
+      })
+
+      requestAnimationFrame(fn)
+    })
+
+    setTimeout(() => {
+      clockEl.style.opacity = 1
+    }, 1500)
+  </script>
+</body>
+</html>

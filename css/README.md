@@ -8,6 +8,7 @@
 - [data-screen](/css/data-screen/README.md)
 - [divider](/css/divider/README.md)
 - [flex](/css/flex/README.md)
+- [flip-clock](/css/flip-clock/README.md)
 - [loading](/css/loading/README.md)
 - [login-form](/css/login-form/README.md)
 - [radar](/css/radar/README.md)
