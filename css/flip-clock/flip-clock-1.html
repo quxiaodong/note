@@ -21,7 +21,6 @@
       align-items: flex-end;
       justify-content: center;
       user-select: none;
-      opacity: 0;
     }
     .card {
       position: relative;
@@ -44,16 +43,23 @@
     }
     /* 时分秒字体大小 */
     .hours, .minutes {
-      width: 40vmin;
-      font-size: 30vmin;
+      width: 28vw;
+      height: 60vh;
+      line-height: 60vh;
+      font-size: 36vmin;
     }
     .minutes {
-      margin-left: 4vmin;
+      margin-left: 4vw;
     }
     .seconds {
-      width: 10vmin;
-      margin-left: 4vmin;
-      font-size: 6vmin;
+      margin-left: 4vw;
+      width: 10vw;
+      height: 18vh;
+      line-height: 18vh;
+      font-size: 10vmin;
+    }
+    .seconds::after {
+      height: 1px;
     }
     /* 每个数字卡片 */
     .card .top, .card .bottom {
@@ -100,21 +106,18 @@
       <div class="bottom bottom-front"></div>
       <div class="top top-back"></div>
       <div class="bottom bottom-back"></div>
-      <div>0</div>
     </div>
     <div class="card minutes">
       <div class="top top-front"></div>
       <div class="bottom bottom-front"></div>
       <div class="top top-back"></div>
       <div class="bottom bottom-back"></div>
-      <div>0</div>
     </div>
     <div class="card seconds">
       <div class="top top-front"></div>
       <div class="bottom bottom-front"></div>
       <div class="top top-back"></div>
       <div class="bottom bottom-back"></div>
-      <div>0</div>
     </div>
   </div>
   <script>
@@ -171,10 +174,6 @@
 
       requestAnimationFrame(fn)
     })
-
-    setTimeout(() => {
-      clockEl.style.opacity = 1
-    }, 1500)
   </script>
 </body>
 </html>
