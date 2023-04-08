@@ -1,3 +1,4 @@
 - [branch](/git/branch.md)
 - [config](/git/config.md)
+- [init](/git/init.md)
 - [workspace](/git/workspace.md)
