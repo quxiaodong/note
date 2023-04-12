@@ -51,7 +51,9 @@
 - dribbble.com
 - undraw.co
 - error404.fun
+- fffuel.co/
 
 #### waves
 
 - getwaves.io
+- svgwave.in/
