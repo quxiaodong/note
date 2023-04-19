@@ -1,4 +1,5 @@
 - [branch](/git/branch.md)
+- [checkout](/git/checkout.md)
 - [config](/git/config.md)
 - [init](/git/init.md)
 - [workspace](/git/workspace.md)
