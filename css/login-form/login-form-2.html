@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .form {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .name {
+      flex: 1 0 130px;
+    }
+    .email {
+      flex: 1 0 130px;
+    }
+    .button {
+      flex: 1 0 40px
+    }
+  </style>
+</head>
+<body>
+  <form class="form">
+    <input type="text" class="name" placeholder="Name">
+    <input type="text" class="email" placeholder="Email">
+    <button class="button">Submit</button>
+  </form>
+</body>
+</html>
