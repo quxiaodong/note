@@ -6,6 +6,6 @@
 #### 编译配置
 
 ```bash
-// 生成tsconfig.json
+# 生成tsconfig.json
 cmd > tsc --init
 ```
