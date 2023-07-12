@@ -46,7 +46,7 @@ cmd > docker pull registry.cn-hangzhou.aliyuncs.com/some-project/client-web:1.0
 cmd > docker pull registry
 
 # 2. 配置运行仓库
-cmd > docker run -id -p 5000:5000 -v /registry/:/tmp/registry --name registry registry:latest
+cmd > docker run -id -p 5000:5000 -v /registry/:/var/lib/registry --name registry registry:latest
 
 # 3. 创建目标镜像
 cmd > docker tag 28a9b9a72940(镜像ID) 127.0.0.1:5000/some-project/client-web:1.0

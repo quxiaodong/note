@@ -28,4 +28,8 @@ cmd > docker run -it nginx:latest /bin/bash
 # 目录必须是绝对路径
 # 如果目录不存在，则会自动创建目录
 # 可以挂载多个数据卷
+cmd > docker run -id -v /nginx:/nginx nginx:latest
+
+# ro参数设置容器对/nginx目录只读
+cmd > docker run -id -v /nginx:/nginx:ro nginx:latest
 ```
