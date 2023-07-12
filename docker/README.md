@@ -2,6 +2,7 @@
 - [image](/docker/image.md)
 - [installation](/docker/installation.md)
 - [mysql](/docker/mysql.md)
+- [nginx](/docker/nginx.md)
 - [registry](/docker/registry.md)
 
 #### 常用命令
