@@ -21,3 +21,11 @@ cmd > docker run --name test-nginx nginx:latest
 ```bash
 cmd > docker run -it nginx:latest /bin/bash
 ```
+
+- `-v`: 挂载数据卷
+
+```bash
+# 目录必须是绝对路径
+# 如果目录不存在，则会自动创建目录
+# 可以挂载多个数据卷
+```

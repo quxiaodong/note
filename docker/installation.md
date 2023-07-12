@@ -5,7 +5,7 @@ cmd > yum install -y yum-utils
 cmd > yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 cmd > yum install -y docker-ce
 
-cmd > docker -v
+cmd > docker version
 ```
 
 ```bash
@@ -21,6 +21,6 @@ cmd > systemctl restart docker
 # 查看状态
 cmd > systemctl status docker
 
-# 开机启动程序
+# 开机启动
 cmd > systemctl enable docker
 ```

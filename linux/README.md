@@ -2,9 +2,9 @@
 
 ```
 根目录/
-├─ bin       # 存放可执行二进制文件，如ls、mv、cat
+├─ bin       # 即binary，存放可执行二进制文件，如ls、mv、cat
 ├─ boot      # 存放系统启动时用到的文件
-├─ dev       # 存放系统下的设备文件，常用于挂载光驱
+├─ dev       # 即device，存放系统下的设备文件
 ├─ etc       # 存放系统配置文件
 ├─ home      # 存放所有用户目录
   ├─ user1
@@ -12,8 +12,13 @@
     ├─ Documents
     ├─ Downloads
   ├─ user2
-├─ lib       # 存放系统使用的函数库
-├─ usr
+├─ lib       # 即library，存放系统使用的函数库
+├─ mnt       # 即mount，用于挂载一些外部存储设备，如硬盘
+├─ proc      # 即process directory，保存进程信息
+├─ sbin      # 即system binary，存放可执行二进制文件，如shutdown、reboot
+├─ usr       # 即unix software resource
+  ├─ bin
+  ├─ sbin
 ```
 
 #### 命令格式
@@ -80,3 +85,4 @@ man touch
 | [tar](/linux/tar.md) | tape archive | 归档解档文件 |
 | [touch](/linux/touch.md) | touch | 新建文件 |
 | [tree](/linux/tree.md) | tree | 以树状图的形式列出文件目录结构 |
+| [vi](/linux/vi.md) | visual interface | 文本编辑器 |
