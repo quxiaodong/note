@@ -12,5 +12,5 @@ cmd > docker run -d -p 80:80 --name test-nginx nginx:latest
 
 ```bash
 # 本地电脑测试验证
-cmd > curl localhost:80
+# 浏览器访问 宿主机IP:80
 ```

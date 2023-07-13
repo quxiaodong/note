@@ -1,6 +1,7 @@
 - [container](/docker/container.md)
 - [image](/docker/image.md)
 - [installation](/docker/installation.md)
+- [jenkins](/docker/jenkins.md)
 - [mysql](/docker/mysql.md)
 - [nginx](/docker/nginx.md)
 - [registry](/docker/registry.md)
