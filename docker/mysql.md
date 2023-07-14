@@ -5,8 +5,8 @@ cmd > docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 --name test-mysql
 # -d \
 # -p 3306:3306 \
 # -e MYSQL_ROOT_PASSWORD=123456 \
-# -v /some-project/mysql/data:/var/lib/mysql \
-# -v /some-project/mysql/log:/var/log/mysql \
+# -v /docker-mysql/data:/var/lib/mysql \
+# -v /docker-mysql/log:/var/log/mysql \
 # --name test-mysql \
 # mysql:latest
 

@@ -1,14 +1,14 @@
 ```bash
 cmd > docker run -d -p 8080:8080 -p 50000:50000 --name test-jenkins jenkins/jenkins:latest
 
-# cmd > mkdir -p /some-project/jenkins
-# cmd > chown -R 1000:1000 /some-project/jenkins
+# cmd > mkdir -p /docker-jenkins
+# cmd > chown -R 1000:1000 /docker-jenkins
 # cmd > docker run \
 # -d \
 # -p 8080:8080 \
 # -p 50000:50000 \
 # --restart=on-failure \
-# -v /some-project/jenkins:/var/jenkins_home \
+# -v /docker-jenkins:/var/jenkins_home \
 # --name test-jenkins \
 # jenkins/jenkins:latest
 ```
