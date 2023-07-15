@@ -13,13 +13,7 @@ cmd > docker run -id nginx:latest
 - `--name`: 给容器命名
 
 ```bash
-cmd > docker run --name test-nginx nginx:latest
-```
-
-- `-t`: 分配一个终端。通常与`-i`结合使用
-
-```bash
-cmd > docker run -it nginx:latest /bin/bash
+cmd > docker run -id --name test-nginx nginx:latest
 ```
 
 - `-v`: 挂载数据卷

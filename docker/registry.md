@@ -11,7 +11,7 @@ cmd > docker images
 cmd > docker run -id --name test-client-web some-project/client-web:1.0
 ```
 
-#### 阿里云
+#### 阿里仓库
 
 ```bash
 # 1. 阿里云控制台
@@ -39,7 +39,7 @@ cmd > docker push registry.cn-hangzhou.aliyuncs.com/some-project/client-web:1.0
 cmd > docker pull registry.cn-hangzhou.aliyuncs.com/some-project/client-web:1.0
 ```
 
-#### 私有云
+#### 私有仓库
 
 ```bash
 # 1. 拉取镜像仓库
