@@ -7,8 +7,8 @@ cmd > docker run -d -p 8080:8080 -p 50000:50000 --name test-jenkins jenkins/jenk
 # -d \
 # -p 8080:8080 \
 # -p 50000:50000 \
-# --restart=on-failure \
 # -v /docker-jenkins:/var/jenkins_home \
+# --restart=always \
 # --name test-jenkins \
 # jenkins/jenkins:latest
 ```

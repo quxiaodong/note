@@ -6,6 +6,7 @@ cmd > docker run -d -p 80:80 --name test-nginx nginx:latest
 # -p 80:80 \
 # -v /docker-nginx/html:/usr/share/nginx/html \
 # -v /docker-nginx/log:/var/log/nginx \
+# --restart=always \
 # --name test-nginx \
 # nginx:latest
 ```
