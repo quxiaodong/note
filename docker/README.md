@@ -7,6 +7,7 @@
 #### 软件工具
 
 - [jenkins](/docker/jenkins.md)
+- [mongo](/docker/mongo.md)
 - [mysql](/docker/mysql.md)
 - [nginx](/docker/nginx.md)
 - [portainer](/docker/portainer.md)

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .button {
+      line-height: 30px;
+      text-align: center;
+      color: #fff;
+      background-color: lightcoral;
+      cursor: pointer;
+    }
+    .collapse {
+      clip-path: inset(0 0 100% 0);
+      transition: clip-path .5s;
+    }
+    .button:hover + .collapse {
+      clip-path: inset(0);
+    }
+  </style>
+</head>
+<body>
+  <div class="button">Hover</div>
+  <div class="collapse">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta voluptates quo ducimus provident adipisci! Illo, non rerum animi perferendis mollitia dicta, est odit, nam consequuntur temporibus cum earum ad fugiat.</p>
+  </div>
+</body>
+</html>
