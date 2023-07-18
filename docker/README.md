@@ -1,4 +1,3 @@
-- [compose](/docker/compose.md)
 - [container](/docker/container.md)
 - [image](/docker/image.md)
 - [installation](/docker/installation.md)
