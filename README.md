@@ -5,5 +5,6 @@
 - [linux](/linux/README.md)
 - [miniprogram](/miniprogram/README.md)
 - [npm](/npm/README.md)
+- [ssh](/ssh/README.md)
 - [typescript](/typescript/README.md)
 - [website](/website/README.md)
