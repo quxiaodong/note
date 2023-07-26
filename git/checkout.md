@@ -17,5 +17,5 @@ git checkout -b NewBranchName origin/OldBranchName
 
 ```bash
 # 创建空白分支
-git checkout --orphan branchName
+git checkout --orphan NewBranchName
 ```
