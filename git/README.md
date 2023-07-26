@@ -3,4 +3,5 @@
 - [commit](/git/commit.md)
 - [config](/git/config.md)
 - [init](/git/init.md)
+- [restore](/git/restore.md)
 - [workspace](/git/workspace.md)
