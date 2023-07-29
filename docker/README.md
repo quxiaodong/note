@@ -17,6 +17,7 @@
 | 命令 | 作用 |
 | - | - |
 | [build](/docker/build.md) | 基于Dockerfile构建镜像 |
+| [compose up](/docker/compose-up.md) | 创建和启动容器 |
 | [cp](/docker/cp.md) | 在容器和主机之间拷贝文件或文件夹 |
 | [exec](/docker/exec.md) | 在运行的容器中执行命令 |
 | [inspect](/docker/inspect.md) | 查看镜像和容器的配置信息 |
