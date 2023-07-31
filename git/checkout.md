@@ -11,6 +11,9 @@ git checkout -b NewBranchName
 
 # 基于远程分支创建新分支
 git checkout -b NewBranchName origin/OldBranchName
+
+# 基于某个commit创建分支
+git checkout -b NewBranchName ba56c0931bcc97cc9f164422648757dd0079a1ba
 ```
 
 - `--orphan`: 创建一个没有提交记录的分支
