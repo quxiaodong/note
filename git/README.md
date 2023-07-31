@@ -3,6 +3,7 @@
 - [commit](/git/commit.md)
 - [config](/git/config.md)
 - [init](/git/init.md)
+- [rebase](/git/rebase.md)
 - [reset](/git/reset.md)
 - [restore](/git/restore.md)
 - [workspace](/git/workspace.md)
