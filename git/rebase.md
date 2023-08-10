@@ -53,3 +53,30 @@ git log --oneline
 # 强制推送到远程仓库
 git push -f
 ```
+
+#### 修改远程提交信息
+
+```bash
+# 查看历史提交记录
+git log --oneline
+
+# 8bb3f0b (HEAD -> main, origin/main) This is second commit
+# b9c8ea9 This is first commit
+# 69b2d0c initial commit
+```
+
+```bash
+# 选择需要修改的提交
+git rebase -i HEAD~2
+
+# r b9c8ea9 This is first commit
+# pick 8bb3f0b This is second commit
+```
+
+```bash
+# 查看更新后的提交记录
+git log --oneline
+
+# 强制推送到远程仓库
+git push -f
+```
