@@ -6,9 +6,4 @@
 
 #### 编译配置
 
-```bash
-cmd > npm install typescript
-
-# 生成tsconfig.json
-cmd > tsc --init
-```
+- [tsc](/typescript/tsc.md)
