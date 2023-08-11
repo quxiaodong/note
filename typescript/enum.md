@@ -13,16 +13,22 @@ type ColorKey = keyof typeof ColorEnum // "red" | "green" | "orange"
 type ColorValue = `${ColorEnum}` // "0" | "1" | "2"
 ```
 
-#### 解构
+#### typeof
+
+限制对象的属性为`enum`中定义的字段
 
 ```typescript
 enum Color {
-  Red = 'red',
-  Green = 'green'
+  red = 'Red',
+  green = 'Green'
 }
 
-const Colors = { ...Color }
-console.log(Colors) // { Red: 'red', Green: 'green' }
+// 此时，color可以添加新属性
+const color = { ...Color, yellow: 'Yellow' }
+console.log(color) // { red: 'Red', green: 'Green', yellow: 'Yellow' }
+
+// 此时，color不可以添加属性
+const color: typeof Color = { ...Color, yellow: 'Yellow' } // 报错
 ```
 
 #### 赋值
