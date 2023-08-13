@@ -24,6 +24,19 @@ username = 123
 cmd > tsc --noEmitOnError index.ts
 ```
 
+- `--noImplicitAny`: 对具有隐含的`any`类型的表达式和声明引发错误
+
+```typescript
+// index.ts
+function getValue(value) {
+  console.log(value)
+}
+```
+
+```bash
+cmd > tsc --noImplicitAny index.ts
+```
+
 - `--watch`: 监听文件变化，并自动执行编译
 
 ```bash
