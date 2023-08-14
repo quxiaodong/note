@@ -37,6 +37,12 @@ function getValue(value) {
 cmd > tsc --noImplicitAny index.ts
 ```
 
+- `--sourceMap`: 生成源代码映射信息
+
+```bash
+cmd > tsc --sourceMap index.ts
+```
+
 - `--watch`: 监听文件变化，并自动执行编译
 
 ```bash
