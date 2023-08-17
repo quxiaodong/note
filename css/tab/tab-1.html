@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .tab {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    /* 每一项 */
+    .tab-item {
+      position: relative;
+      width: 20vw;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+    }
+    .tab-item::before,
+    .tab-item::after {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      width: 20px;
+      height: 20px;
+    }
+    .tab-item::before {
+      top: 0;
+      left: -20px;
+    }
+    .tab-item::after {
+      bottom: 0;
+      right: -20px;
+    }
+
+    /* 奇数 */
+    .tab-item:nth-child(odd) {
+      border-top-right-radius: 10px;
+      background: lightcoral;
+    }
+    .tab-item:nth-child(odd)::before {
+      background:radial-gradient(circle at 0 100%, transparent 20px, lightcoral 20px);
+    }
+    .tab-item:nth-child(odd)::after {
+      background:radial-gradient(circle at 100% 0, transparent 20px, lightcoral 20px);
+    }
+
+    /* 偶数 */
+    .tab-item:nth-child(even) {
+      border-bottom-left-radius: 10px;
+      background: lightgreen;
+    }
+    .tab-item:nth-child(even)::before {
+      background:radial-gradient(circle at 0 100%, transparent 20px, lightgreen 20px);
+    }
+    .tab-item:nth-child(even)::after {
+      background:radial-gradient(circle at 100% 0, transparent 20px, lightgreen 20px);
+    }
+  </style>
+</head>
+<body>
+  <div class="tab">
+    <div class="tab-item">1</div>
+    <div class="tab-item">2</div>
+    <div class="tab-item">3</div>
+    <div class="tab-item">4</div>
+  </div>
+</body>
+</html>
