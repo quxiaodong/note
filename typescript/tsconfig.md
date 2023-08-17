@@ -1,3 +1,27 @@
+#### baseUrl
+
+用于解析非(绝对或相对)路径开头的目录
+
+```json
+{
+  "compilerOptions": {
+    "baseUrl": "src"
+  }
+}
+```
+
+```
+根目录/
+├─ src
+  ├─ index.ts
+  ├─ utils.ts
+```
+
+```typescript
+// 此时，路径会以src作为起始目录
+import { sum } from 'utils'
+```
+
 #### exclude
 
 只对`include`的配置起作用
@@ -41,7 +65,7 @@
 
 #### module
 
-指定编译后的模块规范
+指定编译后的模块化规范
 
 ```typescript
 export const sum = (a, b) => a + b
@@ -71,7 +95,7 @@ exports.sum = sum;
 }
 ```
 
-```typescript
+```javascript
 define(["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
@@ -79,6 +103,23 @@ define(["require", "exports"], function (require, exports) {
     var sum = function (a, b) { return a + b; };
     exports.sum = sum;
 });
+```
+
+#### noLib
+
+禁止自动包含任何库文件
+
+```json
+{
+  "compilerOptions": {
+    "noLib": true
+  }
+}
+```
+
+```typescript
+// 找不到名称“document”。是否需要更改目标库? 请尝试更改 “lib” 编译器选项以包括 “dom”。
+document.addEventListener('click', () => {}) // 报错
 ```
 
 #### outDir
@@ -93,7 +134,21 @@ define(["require", "exports"], function (require, exports) {
 }
 ```
 
+#### sourceMap
+
+生成`sourceMap`
+
+```json
+{
+  "compilerOptions": {
+    "sourceMap": true
+  }
+}
+```
+
 #### target
+
+指定编译后的ES版本
 
 ```typescript
 const sum = (a, b) => a + b
@@ -121,4 +176,16 @@ var sum = function (a, b) { return a + b; };
 
 ```javascript
 const sum = (a, b) => a + b;
+```
+
+#### typeRoots
+
+指定类型声明文件目录，默认值`node_modules/@types`
+
+```json
+{
+  "compilerOptions": {
+    "typeRoots": ["./typings"]
+  }
+}
 ```
