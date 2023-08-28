@@ -1,5 +1,3 @@
-#### 遍历
-
 ```typescript
 interface Person {
   age: number
@@ -11,6 +9,8 @@ const person: Person = {
   name: 'Nicholas'
 }
 ```
+
+#### 遍历
 
 ```typescript
 let key: keyof Person
@@ -41,23 +41,22 @@ getKeys(person).forEach(key => {
 })
 ```
 
+#### 取值
+
+```typescript
+function getValue<T, K extends keyof T>(data: T, property: K): T[K] {
+  return data[property]
+}
+
+getValue(person, 'name') // string
+getValue(person, 'age') // number
+```
+
 #### 赋值
 
 ```typescript
-interface Person {
-  age: number
-  name: string
-}
-
-const person: Person = {
-  age: 18,
-  name: 'Nicholas'
-}
-```
-
-```typescript
-function setValue<T, K extends keyof T>(obj: T, key: K, value: T[K]) {
-  obj[key] = value
+function setValue<T, K extends keyof T>(data: T, property: K, value: T[K]) {
+  data[property] = value
 }
 
 setValue(person, 'name', 123) // 报错
