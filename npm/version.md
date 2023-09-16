@@ -30,8 +30,27 @@ npm中的包模块版本遵循[SemVer](https://semver.org/)（Semantic Version�
 
 #### 版本比较
 
+```json
+{
+  "engines": {
+    "node": "v16.19.0"
+  }
+}
+```
+
 ```bash
 cmd > npm install semver
+```
+
+```javascript
+import semver from 'semver'
+import { engines } from './package'
+
+const version = engines.node
+if (!semver.satisfies(process.version, version)) {
+  console.log(`Required node version ${version} not satisfied with current version ${process.version}.`)
+  process.exit(1)
+}
 ```
 
 #### 依赖更新
