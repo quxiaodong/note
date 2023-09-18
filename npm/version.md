@@ -33,7 +33,7 @@ npm中的包模块版本遵循[SemVer](https://semver.org/)（Semantic Version�
 ```json
 {
   "engines": {
-    "node": "v16.19.0"
+    "node": "16.19.0"
   }
 }
 ```

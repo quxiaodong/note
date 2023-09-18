@@ -3,6 +3,7 @@
 - [button](/css/button/README.md)
 - [card](/css/card/README.md)
 - [carousel](/css/carousel/README.md)
+- [cart](/css/cart/README.md)
 - [chart](/css/chart/README.md)
 - [circle-loading](/css/circle-loading/README.md)
 - [collapse](/css/collapse/README.md)

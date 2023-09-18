@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .ball {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 100%;
+      background-color: lightcoral;
+      animation:
+        moveX 0.8s linear infinite,
+        moveY 0.8s cubic-bezier(.55, 0, .85, .36) infinite;
+      animation-composition: accumulate;
+    }
+    @keyframes moveX {
+      100% {
+        transform: translateX(50vw);
+      }
+    }
+    @keyframes moveY {
+      100% {
+        transform: translateY(100vh);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="ball"></div>
+</body>
+</html>
