@@ -6,4 +6,5 @@
 - [rebase](/git/rebase.md)
 - [reset](/git/reset.md)
 - [restore](/git/restore.md)
+- [stash](/git/stash.md)
 - [workspace](/git/workspace.md)
