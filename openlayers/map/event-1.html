@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7/ol.css">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-body">
+        <div id="map" style="height: 50vh;"></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <p class="card-text">事件：BaseEvent、ObjectEvent、MapEvent、MapBrowserEvent、RenderEvent</p>
+        <p class="card-text">
+          <a class="link-primary">https://blog.csdn.net/HerryDong/article/details/109074391</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ol@v7/dist/ol.js"></script>
+  <script>
+    const map = new ol.Map({
+      target: 'map',
+      view: new ol.View({
+        center: [0, 0],
+        zoom: 0
+      }),
+      layers: [
+        new ol.layer.Tile({
+          source: new ol.source.OSM()
+        })
+      ]
+    })
+
+    // 1. BaseEvent
+    map.on('change', () => {
+      console.log('BaseEvent-change')
+    })
+
+    // 2. ObjectEvent
+    // 改变DOM大小会触发
+    map.on('change:size', () => {
+      console.log('ObjectEvent-change:size')
+    })
+
+    // 3. MapEvent
+    // 地图移动结束会触发
+    map.once('moveend', () => {
+      console.log('MapEvent-moveend')
+    })
+
+    // 4. MapBrowserEvent
+    // 单击地图会触发
+    map.on('singleclick', () => {
+      console.log('MapBrowserEvent-singleclick')
+    })
+
+    // 5. RenderEvent
+    // 地图渲染结束会触发
+    function rendercomplete() {
+      console.log('RenderEvent-rendercomplete')
+      map.un('rendercomplete', rendercomplete)
+    }
+    map.on('rendercomplete', rendercomplete)
+  </script>
+</body>
+</html>
