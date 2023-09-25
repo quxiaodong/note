@@ -40,31 +40,31 @@
 
     // 1. BaseEvent
     map.on('change', () => {
-      console.log('BaseEvent-change')
+      console.log('BaseEvent change')
     })
 
     // 2. ObjectEvent
     // 改变DOM大小会触发
     map.on('change:size', () => {
-      console.log('ObjectEvent-change:size')
+      console.log('ObjectEvent change:size')
     })
 
     // 3. MapEvent
     // 地图移动结束会触发
     map.once('moveend', () => {
-      console.log('MapEvent-moveend')
+      console.log('MapEvent moveend')
     })
 
     // 4. MapBrowserEvent
     // 单击地图会触发
     map.on('singleclick', () => {
-      console.log('MapBrowserEvent-singleclick')
+      console.log('MapBrowserEvent singleclick')
     })
 
     // 5. RenderEvent
     // 地图渲染结束会触发
     function rendercomplete() {
-      console.log('RenderEvent-rendercomplete')
+      console.log('RenderEvent rendercomplete')
       map.un('rendercomplete', rendercomplete)
     }
     map.on('rendercomplete', rendercomplete)

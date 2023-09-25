@@ -1,2 +1,3 @@
-- [map](/openlayers/map/README.md)
-- [view](/openlayers/view/README.md)
+- [Map](/openlayers/map/README.md)
+- [Overlay](/openlayers/overlay/README.md)
+- [View](/openlayers/view/README.md)

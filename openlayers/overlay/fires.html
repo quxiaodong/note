@@ -19,16 +19,20 @@
       </div>
     </div>
   </div>
+  <template id="overlay-template">
+    <div class="toast show">
+      <div class="toast-body">0, 0</div>
+    </div>
+  </template>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/ol@v7/dist/ol.js"></script>
   <script>
-    const view = new ol.View({
-      center: [0, 0],
-      zoom: 0
-    })
-    new ol.Map({
+    const map = new ol.Map({
       target: 'map',
-      view,
+      view: new ol.View({
+        center: [0, 0],
+        zoom: 0
+      }),
       layers: [
         new ol.layer.Tile({
           source: new ol.source.OSM()
@@ -36,14 +40,23 @@
       ]
     })
 
-    // 1. BaseEvent
-    view.on('change', () => {
-      console.log('BaseEvent change')
+    const element = document.getElementById('overlay-template').content.cloneNode(true)
+    const toastBody = element.querySelector('.toast-body')
+    const overlay = new ol.Overlay({
+      element,
+      position: [0, 0],
+      positioning: 'bottom-center'
     })
 
-    // 2. ObjectEvent
-    view.on('change:center', () => {
-      console.log('ObjectEvent change:center')
+    map.addOverlay(overlay)
+
+    map.on('singleclick', e => {
+      toastBody.innerText = e.coordinate.join(', ')
+      overlay.setPosition(e.coordinate)
+    })
+
+    overlay.on('change:position', () => {
+      console.log('ObjectEvent change:position')
     })
   </script>
 </body>
