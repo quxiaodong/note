@@ -37,11 +37,13 @@
     })
 
     // 1. BaseEvent
+    // 操作view会触发
     view.on('change', () => {
       console.log('BaseEvent change')
     })
 
     // 2. ObjectEvent
+    // 操作view会触发
     view.on('change:center', () => {
       console.log('ObjectEvent change:center')
     })

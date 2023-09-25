@@ -55,6 +55,13 @@
       overlay.setPosition(e.coordinate)
     })
 
+    // 1. BaseEvent
+    overlay.on('change', () => {
+      console.log('BaseEvent change')
+    })
+
+    // 2. ObjectEvent
+    // 更改overlay的position会触发
     overlay.on('change:position', () => {
       console.log('ObjectEvent change:position')
     })
