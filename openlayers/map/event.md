@@ -1,1 +1,0 @@
-<iframe style="border: none; height: 100vh;" src="openlayers/map/event-1.html"></iframe>

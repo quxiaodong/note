@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7/ol.css">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-body">
+        <div id="map" style="height: 50vh;"></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <p class="card-text">事件：BaseEvent、ObjectEvent</p>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ol@v7/dist/ol.js"></script>
+  <script>
+    const view = new ol.View({
+      center: [0, 0],
+      zoom: 0
+    })
+    new ol.Map({
+      target: 'map',
+      view,
+      layers: [
+        new ol.layer.Tile({
+          source: new ol.source.OSM()
+        })
+      ]
+    })
+
+    // 1. BaseEvent
+    view.on('change', () => {
+      console.log('BaseEvent-change')
+    })
+
+    // 2. ObjectEvent
+    view.on('change:center', () => {
+      console.log('ObjectEvent-change:center')
+    })
+  </script>
+</body>
+</html>
