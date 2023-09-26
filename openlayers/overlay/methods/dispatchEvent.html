@@ -15,13 +15,13 @@
     </div>
     <div class="card">
       <div class="card-body">
-        <button type="button" class="btn btn-primary" onclick="setPosition()">setPosition</button>
+        <button type="button" class="btn btn-primary" onclick="dispatch()">dispatchEvent</button>
       </div>
     </div>
   </div>
   <template id="overlay-template">
     <div class="toast show">
-      <div class="toast-body">0, 0</div>
+      <div class="toast-body">Hello world</div>
     </div>
   </template>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"></script>
@@ -41,25 +41,19 @@
       ]
     })
 
-    const element = document.getElementById('overlay-template').content
-    const toastBody = element.querySelector('.toast-body')
     const overlay = new ol.Overlay({
-      element,
+      element: document.getElementById('overlay-template').content.children[0],
       position: [0, 0],
       positioning: 'bottom-center'
     })
     map.addOverlay(overlay)
 
-    overlay.on('change:position', () => {
-      console.log('change:position')
+    overlay.on('custom-event', (e) => {
+      e.target.getElement().classList.toggle('text-bg-primary')
     })
 
-    let x = 0
-    function setPosition() {
-      x += 1
-      const coordinate = [x, 0]
-      toastBody.innerText = coordinate.join(', ')
-      overlay.setPosition(coordinate)
+    function dispatch() {
+      overlay.dispatchEvent('custom-event')
     }
   </script>
 </body>
