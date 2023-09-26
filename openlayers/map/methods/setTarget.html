@@ -46,10 +46,14 @@
       ]
     })
 
-    let flag = 0
+    map.on('change:target', () => {
+      console.log('change:target')
+    })
+
+    let flag = 1
     function setTarget() {
-      map.setTarget(flag % 2 !== 0 ? 'map1' : 'map2')
       flag++
+      map.setTarget(flag % 2 !== 0 ? 'map1' : 'map2')
     }
   </script>
 </body>

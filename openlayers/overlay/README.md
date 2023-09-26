@@ -1,5 +1,9 @@
-#### 基础知识
+#### 可选参数
 
-- Options
-- Methods
-- <a href="openlayers/overlay/fires/index.html" target="_blank">Fires</a>
+#### 实例方法
+
+- <a href="openlayers/overlay/methods/setPosition.html" target="_blank">setPosition</a>
+
+#### 事件监听
+
+- <a href="openlayers/overlay/methods/setPosition.html" target="_blank">change:position</a>

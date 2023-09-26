@@ -15,7 +15,7 @@
     </div>
     <div class="card">
       <div class="card-body">
-        <p class="card-text">事件：BaseEvent、ObjectEvent</p>
+        <button type="button" class="btn btn-primary" onclick="setPosition()">setPosition</button>
       </div>
     </div>
   </div>
@@ -30,6 +30,7 @@
     const map = new ol.Map({
       target: 'map',
       view: new ol.View({
+        projection: 'EPSG:4326',
         center: [0, 0],
         zoom: 0
       }),
@@ -47,24 +48,19 @@
       position: [0, 0],
       positioning: 'bottom-center'
     })
-
     map.addOverlay(overlay)
 
-    map.on('singleclick', e => {
-      toastBody.innerText = e.coordinate.join(', ')
-      overlay.setPosition(e.coordinate)
-    })
-
-    // 1. BaseEvent
-    overlay.on('change', () => {
-      console.log('BaseEvent change')
-    })
-
-    // 2. ObjectEvent
-    // 更改overlay的position会触发
     overlay.on('change:position', () => {
-      console.log('ObjectEvent change:position')
+      console.log('change:position')
     })
+
+    let x = 0
+    function setPosition() {
+      x += 1
+      const coordinate = [x, 0]
+      toastBody.innerText = coordinate.join(', ')
+      overlay.setPosition(coordinate)
+    }
   </script>
 </body>
 </html>

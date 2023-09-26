@@ -15,7 +15,7 @@
     </div>
     <div class="card">
       <div class="card-body">
-        <p class="card-text">事件：BaseEvent、ObjectEvent</p>
+        <button type="button" class="btn btn-primary" onclick="setCenter()">setCenter</button>
       </div>
     </div>
   </div>
@@ -23,6 +23,7 @@
   <script src="https://cdn.jsdelivr.net/npm/ol@v7/dist/ol.js"></script>
   <script>
     const view = new ol.View({
+      projection: 'EPSG:4326',
       center: [0, 0],
       zoom: 0
     })
@@ -36,17 +37,15 @@
       ]
     })
 
-    // 1. BaseEvent
-    // 操作view会触发
-    view.on('change', () => {
-      console.log('BaseEvent change')
+    view.on('change:center', () => {
+      console.log('change:center')
     })
 
-    // 2. ObjectEvent
-    // 操作view会触发
-    view.on('change:center', () => {
-      console.log('ObjectEvent change:center')
-    })
+    let x = 0
+    function setCenter() {
+      x += 1
+      view.setCenter([x, 0])
+    }
   </script>
 </body>
 </html>

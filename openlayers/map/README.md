@@ -1,6 +1,10 @@
-#### 基础知识
+#### 可选参数
 
-- Options
-- Methods
-  - <a href="openlayers/map/methods/setTarget.html" target="_blank">setTarget</a>
-- <a href="openlayers/map/fires/index.html" target="_blank">Fires</a>
+#### 实例方法
+
+- <a href="openlayers/map/methods/setTarget.html" target="_blank">setTarget</a>
+
+#### 事件监听
+
+- <a href="openlayers/map/fires/singleclick.html" target="_blank">singleclick</a>
+- <a href="openlayers/map/methods/setTarget.html" target="_blank">change:target</a>

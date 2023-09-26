@@ -1,9 +1,14 @@
-#### 基础知识
+#### 可选参数
 
-- Options
-  - <a href="openlayers/view/options/projection.html" target="_blank">projection</a>
-- Methods
-- <a href="openlayers/view/fires/index.html" target="_blank">Fires</a>
+- <a href="openlayers/view/options/projection.html" target="_blank">projection</a>
+
+#### 实例方法
+
+- <a href="openlayers/view/methods/setCenter.html" target="_blank">setCenter</a>
+
+#### 事件监听
+
+- <a href="openlayers/view/methods/setCenter.html" target="_blank">change:center</a>
 
 #### 常见用法
 
