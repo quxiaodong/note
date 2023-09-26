@@ -48,7 +48,7 @@
 
     let flag = 0
     function setTarget() {
-      map.setTarget(flag % 2 === 0 ? 'map2' : 'map1')
+      map.setTarget(flag % 2 !== 0 ? 'map1' : 'map2')
       flag++
     }
   </script>
