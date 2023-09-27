@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7/ol.css">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <h5 class="card-header">Geometry</h5>
+          <div class="card-body">
+            <div id="map1" style="height: 50vh;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <h5 class="card-header">ObjectWithGeometry</h5>
+          <div class="card-body">
+            <div id="map2" style="height: 50vh;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ol@v7/dist/ol.js"></script>
+  <script>
+    const feature1 = new ol.Feature(
+      new ol.geom.Point([0, 0])
+    )
+    new ol.Map({
+      target: 'map1',
+      view: new ol.View({
+        center: [0, 0],
+        zoom: 0
+      }),
+      layers: [
+        new ol.layer.Vector({
+          source: new ol.source.Vector({ features: [feature1] })
+        })
+      ]
+    })
+
+    const feature2 = new ol.Feature({
+      geometry: new ol.geom.Point([0, 0])
+    })
+    new ol.Map({
+      target: 'map2',
+      view: new ol.View({
+        center: [0, 0],
+        zoom: 0
+      }),
+      layers: [
+        new ol.layer.Vector({
+          source: new ol.source.Vector({ features: [feature2] })
+        })
+      ]
+    })
+  </script>
+</body>
+</html>

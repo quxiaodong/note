@@ -15,16 +15,18 @@
     </div>
     <div class="card">
       <div class="card-body">
-        <p class="card-text">ObjectWithGeometry</p>
-      </div>
+        <button type="button" class="btn btn-primary" onclick="setGeometryName()">setGeometryName</button>
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/ol@v7/dist/ol.js"></script>
   <script>
     const feature = new ol.Feature({
-      geometry: new ol.geom.Point([0, 0])
+      point: new ol.geom.Point([0, 0]),
+      line: new ol.geom.LineString([[-1000000, -1000000], [1000000, 1000000]])
     })
+
+    feature.setGeometryName('point')
 
     new ol.Map({
       target: 'map',
@@ -38,6 +40,12 @@
         })
       ]
     })
+
+    let flag = 1
+    function setGeometryName() {
+      flag++
+      feature.setGeometryName(flag % 2 !== 0 ? 'point' : 'line')
+    }
   </script>
 </body>
 </html>
