@@ -19,7 +19,7 @@
       </div>
     </div>
   </div>
-  <template id="overlay-template">
+  <template id="template">
     <div class="toast show">
       <div class="toast-body">Hello world</div>
     </div>
@@ -42,7 +42,7 @@
     })
 
     const overlay = new ol.Overlay({
-      element: document.getElementById('overlay-template').content.children[0],
+      element: document.getElementById('template').content.children[0],
       position: [0, 0],
       positioning: 'bottom-center'
     })

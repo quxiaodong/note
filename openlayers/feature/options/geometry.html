@@ -15,48 +15,29 @@
     </div>
     <div class="card">
       <div class="card-body">
-        <button type="button" class="btn btn-primary" onclick="setPosition()">setPosition</button>
+        <p class="card-text">Geometry</p>
       </div>
     </div>
   </div>
-  <template id="template">
-    <div class="toast show">
-      <div class="toast-body">Hello world</div>
-    </div>
-  </template>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/ol@v7/dist/ol.js"></script>
   <script>
-    const map = new ol.Map({
+    const feature = new ol.Feature(
+      new ol.geom.Point([0, 0])
+    )
+
+    new ol.Map({
       target: 'map',
       view: new ol.View({
-        projection: 'EPSG:4326',
         center: [0, 0],
         zoom: 0
       }),
       layers: [
-        new ol.layer.Tile({
-          source: new ol.source.OSM()
+        new ol.layer.Vector({
+          source: new ol.source.Vector({ features: [feature] })
         })
       ]
     })
-
-    const overlay = new ol.Overlay({
-      element: document.getElementById('template').content,
-      position: [0, 0],
-      positioning: 'bottom-center'
-    })
-    map.addOverlay(overlay)
-
-    overlay.on('change:position', () => {
-      console.log('change:position')
-    })
-
-    let x = 0
-    function setPosition() {
-      x += 1
-      overlay.setPosition([x, 0])
-    }
   </script>
 </body>
 </html>
