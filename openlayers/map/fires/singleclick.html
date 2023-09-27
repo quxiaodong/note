@@ -35,7 +35,7 @@
       ]
     })
 
-    const tip = document.querySelector('#tip')
+    const tip = document.getElementById('tip')
     map.on('singleclick', e => {
       tip.innerText = e.coordinate.join(', ')
       console.log('singleclick')
