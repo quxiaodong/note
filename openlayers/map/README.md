@@ -2,7 +2,7 @@
 
 #### 实例方法
 
-- <a href="/openlayers/map/methods/setTarget.html" target="_blank">setTarget</a>
+- <a href="../../openlayers/map/methods/setTarget.html" target="_blank">setTarget</a>
 
 #### 事件监听
 
