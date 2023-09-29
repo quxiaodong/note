@@ -1,4 +1,7 @@
 - [Circle](/openlayers/geom/circle/README.md)
 - [LineString](/openlayers/geom/line-string/README.md)
+- [MultiLineString](/openlayers/geom/multi-line-string/README.md)
+- [MultiPoint](/openlayers/geom/multi-point/README.md)
+- [MultiPolygon](/openlayers/geom/multi-polygon/README.md)
 - [Point](/openlayers/geom/point/README.md)
 - [Polygon](/openlayers/geom/polygon/README.md)
