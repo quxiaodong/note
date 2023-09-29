@@ -1,4 +1,5 @@
 - [Feature](/openlayers/feature/README.md)
+- [Geom](/openlayers/geom/README.md)
 - [Map](/openlayers/map/README.md)
 - [Overlay](/openlayers/overlay/README.md)
 - [View](/openlayers/view/README.md)

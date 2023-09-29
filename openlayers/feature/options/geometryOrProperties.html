@@ -40,6 +40,9 @@
         zoom: 0
       }),
       layers: [
+        new ol.layer.Tile({
+          source: new ol.source.OSM()
+        }),
         new ol.layer.Vector({
           source: new ol.source.Vector({ features: [feature1] })
         })
@@ -56,6 +59,9 @@
         zoom: 0
       }),
       layers: [
+        new ol.layer.Tile({
+          source: new ol.source.OSM()
+        }),
         new ol.layer.Vector({
           source: new ol.source.Vector({ features: [feature2] })
         })

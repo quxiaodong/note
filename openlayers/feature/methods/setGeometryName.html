@@ -16,6 +16,7 @@
     <div class="card">
       <div class="card-body">
         <button type="button" class="btn btn-primary" onclick="setGeometryName()">setGeometryName</button>
+      </div>
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"></script>
@@ -35,6 +36,9 @@
         zoom: 0
       }),
       layers: [
+        new ol.layer.Tile({
+          source: new ol.source.OSM()
+        }),
         new ol.layer.Vector({
           source: new ol.source.Vector({ features: [feature] })
         })
