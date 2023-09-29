@@ -1,11 +1,4 @@
-#### Point
-
-##### 可选参数
-
-- <a href="openlayers/geom/point/options.html" target="_blank">options</a>
-
-#### Circle
-
-#### 可选参数
-
-- <a href="openlayers/geom/circle/options.html" target="_blank">options</a>
+- [Circle](/openlayers/geom/circle/README.md)
+- [LineString](/openlayers/geom/line-string/README.md)
+- [Point](/openlayers/geom/point/README.md)
+- [Polygon](/openlayers/geom/polygon/README.md)
