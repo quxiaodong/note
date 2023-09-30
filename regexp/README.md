@@ -8,6 +8,15 @@ console.dir(reg)
 
 - [quantifiers](/regexp/quantifiers.md)
 
+#### 特殊字符
+
+在`非特殊字符`前面使用`\`，`\`会被忽略
+
+```javascript
+console.log('a\c') // ac
+console.log('a\\c') // a\c
+```
+
 #### 常见用法
 
 - [methods of RegExp](/regexp/regexp-methods.md)
