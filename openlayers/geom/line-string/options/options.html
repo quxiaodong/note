@@ -21,17 +21,6 @@
       new ol.geom.LineString([[-30, 0], [30, 0]])
     )
 
-    const style = [
-      new ol.style.Style({
-        stroke: new ol.style.Stroke({ color: 'lightcoral', width: 6 })
-      }),
-      new ol.style.Style({
-        stroke: new ol.style.Stroke({ color: 'lightgreen', width: 2 })
-      }),
-    ]
-
-    feature.setStyle(style)
-
     new ol.Map({
       target: 'map',
       view: new ol.View({

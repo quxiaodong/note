@@ -25,16 +25,6 @@
       ])
     )
 
-    const style = new ol.style.Style({
-      image: new ol.style.Circle({
-        radius: 30,
-        fill: new ol.style.Fill({ color: 'rgba(144, 238, 144, 0.5)' }),
-        stroke: new ol.style.Stroke({ color: 'lightcoral', width: 2 })
-      })
-    })
-
-    feature.setStyle(style)
-
     new ol.Map({
       target: 'map',
       view: new ol.View({
