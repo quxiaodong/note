@@ -4,4 +4,5 @@
 - [layer](/openlayers/layer/README.md)
 - [Map](/openlayers/map/README.md)
 - [Overlay](/openlayers/overlay/README.md)
+- [source](/openlayers/source/README.md)
 - [View](/openlayers/view/README.md)
