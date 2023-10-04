@@ -28,7 +28,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/ol@v7/dist/ol.js"></script>
   <script>
-    const source = new ol.source.Vector()
+    const vectorSource = new ol.source.Vector()
 
     const map = new ol.Map({
       target: 'map',
@@ -41,7 +41,7 @@
           source: new ol.source.OSM()
         }),
         new ol.layer.Vector({
-          source
+          source: vectorSource
         })
       ]
     })
@@ -57,7 +57,7 @@
         })
       })
       draw.on('drawend', ({ feature }) => {
-        source.addFeature(feature)
+        vectorSource.addFeature(feature)
       })
       map.addInteraction(draw)
     }

@@ -8,54 +8,39 @@
 </head>
 <body>
   <div class="container-fluid">
-    <div class="row">
-      <div class="col">
-        <div class="card">
-          <div class="card-body">
-            <div id="map1" style="height: 50vh;"></div>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card">
-          <div class="card-body">
-            <div id="map2" style="height: 50vh;"></div>
-          </div>
-        </div>
-      </div>
-    </div>
     <div class="card">
       <div class="card-body">
-        <p class="card-text">两个地图共用同一个view</p>
+        <div id="map" style="height: 50vh;"></div>
       </div>
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/ol@v7/dist/ol.js"></script>
   <script>
-    const view = new ol.View({
-      center: [0, 0],
-      zoom: 0
+    const feature = new ol.Feature(
+      new ol.geom.Point([0, 0])
+    )
+    const vectorLayer = new ol.layer.Vector({
+      source: new ol.source.Vector({ features: [feature] })
     })
 
     new ol.Map({
-      target: 'map1',
-      view,
+      target: 'map',
+      view: new ol.View({
+        center: [0, 0],
+        zoom: 0
+      }),
       layers: [
         new ol.layer.Tile({
           source: new ol.source.OSM()
+        }),
+        vectorLayer
+      ],
+      interactions: ol.interaction.defaults.defaults().extend([
+        new ol.interaction.Translate({
+          layers: [vectorLayer]
         })
-      ]
-    })
-
-    new ol.Map({
-      target: 'map2',
-      view,
-      layers: [
-        new ol.layer.Tile({
-          source: new ol.source.OSM()
-        })
-      ]
+      ])
     })
   </script>
 </body>

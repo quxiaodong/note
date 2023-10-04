@@ -24,7 +24,7 @@
   <script>
     const polygon = new ol.geom.Polygon([[[-30, -30], [30, -30], [30, 30], [-30, 30]]])
     const feature = new ol.Feature(polygon)
-    const source = new ol.source.Vector({ features: [feature] })
+    const vectorSource = new ol.source.Vector({ features: [feature] })
 
     new ol.Map({
       target: 'map',
@@ -38,13 +38,13 @@
           source: new ol.source.OSM()
         }),
         new ol.layer.Vector({
-          source
+          source: vectorSource
         })
       ]
     })
 
     function getInteriorPoint() {
-      source.addFeature(new ol.Feature(polygon.getInteriorPoint()))
+      vectorSource.addFeature(new ol.Feature(polygon.getInteriorPoint()))
     }
   </script>
 </body>
