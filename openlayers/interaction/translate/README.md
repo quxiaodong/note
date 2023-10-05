@@ -4,4 +4,4 @@
 
 #### 事件监听
 
-- <a href="openlayers/interaction/translate/methods/translateend.html" target="_blank">translateend</a>
+- <a href="openlayers/interaction/translate/fires/translateend.html" target="_blank">translateend</a>
