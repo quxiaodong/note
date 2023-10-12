@@ -1,3 +1,5 @@
+- [declaration-space](/typescript/declaration-space.md)
+
 #### 类型定义
 
 - [assert](/typescript/assert.md)
