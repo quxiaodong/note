@@ -1,5 +1,3 @@
-- [declaration-space](/typescript/declaration-space.md)
-
 #### 类型定义
 
 - [assert](/typescript/assert.md)
@@ -11,6 +9,8 @@
 #### 常见区别
 
 - [any-unknown](/typescript/any-unknown.md)
+- [covariance-contravariance](/typescript/covariance-contravariance.md)
+- [declaration-space](/typescript/declaration-space.md)
 
 #### 编译配置
 
