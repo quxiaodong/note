@@ -43,3 +43,5 @@ let getCircle = (circle: Circle) => {
 ```
 
 > 之前调用`getShape`传入的是`Shape`类型，通过`getShape = getCircle`赋值后，`getShape`的函数体内需要使用到`Circle`的属性，但是`Shape`中缺失，所以会报错
+
+> `tsconfig.json`中开启`strictFunctionTypes`后才会严格按照`逆变`来约束赋值关系
