@@ -1,3 +1,4 @@
+- [Control](/openlayers/control/README.md)
 - [Feature](/openlayers/feature/README.md)
 - [geom](/openlayers/geom/README.md)
 - [interaction](/openlayers/interaction/README.md)
