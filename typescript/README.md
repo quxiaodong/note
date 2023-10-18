@@ -3,6 +3,7 @@
 - [assert](/typescript/assert.md)
 - [enum](/typescript/enum.md)
 - [generic](/typescript/generic.md)
+- [namespace](/typescript/namespace.md)
 - [object](/typescript/object.md)
 - [typeof](/typescript/typeof.md)
 
