@@ -21,13 +21,6 @@
       background: black;
       overflow: auto;
     }
-    .item {
-      width: 40%;
-      height: 24px;
-      line-height: 24px;
-      text-align: center;
-      font-size: 12px;
-    }
     .item1 {
       background-color: red;
     }
@@ -41,12 +34,11 @@
 </head>
 <body>
   <style contenteditable class="style">
-    .container { display: flex; flex-wrap: nowrap; }
+    .container { display: grid; grid-template-columns: 50% 50%; justify-items: center; }
   </style>
   <div class="container">
     <div class="item item1">1</div>
     <div class="item item2">2</div>
-    <div class="item item3">3</div>
   </div>
 </body>
 </html>
