@@ -15,6 +15,16 @@
 
 <iframe src="css/grid/grid-template-columns.html"></iframe>
 
+##### grid-template-areas
+
+定义布局网格区域
+
+<iframe src="css/grid/grid-template-areas.html"></iframe>
+
+##### grid-template
+
+`grid-template-rows`和`grid-template-columns`和`grid-template-areas`的结合
+
 ##### row-gap
 
 定义行与行的间隔
@@ -32,16 +42,6 @@
 `row-gap`和`column-gap`的结合
 
 <iframe src="css/grid/gap.html"></iframe>
-
-##### grid-template-areas
-
-定义布局网格区域
-
-<iframe src="css/grid/grid-template-areas.html"></iframe>
-
-##### grid-template
-
-`grid-template-rows`和`grid-template-columns`和`grid-template-areas`的结合
 
 ##### justify-items
 
