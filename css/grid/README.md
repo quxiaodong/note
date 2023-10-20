@@ -17,7 +17,7 @@
 
 ##### grid-template-areas
 
-定义布局网格区域
+定义布局网格区域，`.`表示区域置空
 
 <iframe src="css/grid/grid-template-areas.html"></iframe>
 
@@ -91,6 +91,48 @@
 <iframe src="css/grid/place-content.html"></iframe>
 
 #### Grid Item
+
+##### grid-column-start
+
+定义单元格开始的列位置
+
+<iframe src="css/grid/grid-column-start.html"></iframe>
+
+##### grid-column-end
+
+定义单元格结束的列位置
+
+<iframe src="css/grid/grid-column-end.html"></iframe>
+
+##### grid-column
+
+`grid-column-start`和`/`和`grid-column-end`的结合
+
+<iframe src="css/grid/grid-column.html"></iframe>
+
+##### grid-row-start
+
+定义单元格开始的行位置
+
+<iframe src="css/grid/grid-row-start.html"></iframe>
+
+##### grid-row-end
+
+定义单元格结束的行位置
+
+<iframe src="css/grid/grid-row-end.html"></iframe>
+
+##### grid-row
+
+`grid-row-start`和`/`和`grid-row-end`的结合
+
+<iframe src="css/grid/grid-row.html"></iframe>
+
+##### grid-area
+
+定义单元格位于哪个区域
+
+<iframe src="css/grid/grid-area.html"></iframe>
 
 #### 参考资料
 
