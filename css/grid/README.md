@@ -9,17 +9,25 @@
 
 <iframe src="css/grid/grid-template-rows.html"></iframe>
 
+> 定义网格线名称: `grid-template-rows: [r1] 25% [r2] 25% [r3] 50% [r4];`
+
 ##### grid-template-columns
 
 定义每一列的宽度
 
 <iframe src="css/grid/grid-template-columns.html"></iframe>
 
+> 定义网格线名称: `grid-template-columns: [c1] 25% [c2] 25% [c3] 50% [c4];`
+
 ##### grid-template-areas
 
 定义布局网格区域，`.`表示区域置空
 
 <iframe src="css/grid/grid-template-areas.html"></iframe>
+
+> 区域的命名会影响到网格线。每个区域的起始网格线，会自动命名为区域名-start，终止网格线自动命名为区域名-end
+>
+> 比如，区域名为header，则起始位置的水平网格线和垂直网格线叫做header-start，终止位置的水平网格线和垂直网格线叫做header-end
 
 ##### grid-template
 
@@ -146,7 +154,7 @@
 
 <iframe src="css/grid/align-self.html"></iframe>
 
-###### place-self
+##### place-self
 
 `align-self`和`justify-self`的结合
 
@@ -155,3 +163,4 @@
 #### 参考资料
 
 - [A Complete Guide to CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid)
+- [CSS Grid 网格布局教程](https://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html)
