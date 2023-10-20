@@ -134,6 +134,24 @@
 
 <iframe src="css/grid/grid-area.html"></iframe>
 
+##### justify-self
+
+定义自身内容水平位置，同`justify-items`
+
+<iframe src="css/grid/justify-self.html"></iframe>
+
+##### align-self
+
+定义自身内容垂直位置，同`align-items`
+
+<iframe src="css/grid/align-self.html"></iframe>
+
+###### place-self
+
+`align-self`和`justify-self`的结合
+
+<iframe src="css/grid/place-self.html"></iframe>
+
 #### 参考资料
 
 - [A Complete Guide to CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid)
