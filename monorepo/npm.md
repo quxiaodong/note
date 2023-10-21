@@ -6,7 +6,7 @@
     ├─ index.js
     ├─ package.json
 ├─ web-admin
-  ├─ src
+  ├─ index.js
   ├─ package.json
 ```
 
@@ -47,11 +47,6 @@ cmd > npm install
     "package-common"
   ]
 }
-```
-
-```bash
-# web-admin
-cmd > npm install
 ```
 
 ```javascript
