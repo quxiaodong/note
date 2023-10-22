@@ -34,7 +34,7 @@ exports.sum = (a, b) => a + b
 ```
 
 ```bash
-# 根目录
+# 根目录，模块就会出现在根目录的node_modules中
 cmd > npm install
 ```
 
@@ -44,6 +44,10 @@ cmd > npm install
 // web-admin/package.json
 {
   "workspaces": [
+    // 这里也可以写成模块的相对路径
+    // 例如../packages/common
+    // 然后执行npm install安装
+    // 这样模块就会出现在当前项目的node_modules中
     "package-common"
   ]
 }
