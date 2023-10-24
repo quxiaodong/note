@@ -7,6 +7,7 @@
 - [chart](/css/chart/README.md)
 - [circle-loading](/css/circle-loading/README.md)
 - [collapse](/css/collapse/README.md)
+- [countdown](/css/countdown/README.md)
 - [data-screen](/css/data-screen/README.md)
 - [divider](/css/divider/README.md)
 - [flex](/css/flex/README.md)

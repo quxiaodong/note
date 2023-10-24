@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .countdown {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+<body>
+  <div class="countdown"></div>
+  <script>
+    let dom = document.querySelector('.countdown')
+
+    function countdown(from, to, duration = 1000, onProgress) {
+      const speed = (to - from) / duration
+      const startTime = Date.now()
+      console.log('startTime: ', console.time())
+      function _run() {
+        const now = Date.now()
+        const time = now - startTime
+        if (time < duration) {
+          // 当前值 = 起始值 + 速度 * 已使用时间
+          onProgress && onProgress(from + speed * time)
+          requestAnimationFrame(_run)
+        } else {
+          console.log('endTime: ', console.timeEnd())
+          onProgress && onProgress(to)
+        }
+      }
+      _run()
+    }
+
+    countdown(10, 9999, 10000, value => {
+      dom.textContent = value.toFixed(2)
+    })
+  </script>
+</body>
+</html>
