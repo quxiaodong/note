@@ -1,1 +1,2 @@
+- [ImageStatic](/openlayers/source/image-static/README.md)
 - [XYZ](/openlayers/source/xyz/README.md)
