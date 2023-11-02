@@ -1,4 +1,4 @@
-#### 查看表
+#### 查看数据表
 
 ```mysql
 mysql> SHOW TABLES;
@@ -9,7 +9,7 @@ mysql> SHOW TABLES;
 mysql> SHOW TABLES FROM 数据库名;
 ```
 
-#### 创建表
+#### 创建数据表
 
 ```mysql
 mysql> CREATE TABLE 表名 (
@@ -33,7 +33,7 @@ mysql> CREATE TABLE 表名 (
 ) COMMENT '表的注释信息';
 ```
 
-#### 删除表
+#### 删除数据表
 
 ```mysql
 mysql> DROP TABLE 表名1, ..., 表名n;
@@ -44,7 +44,7 @@ mysql> DROP TABLE 表名1, ..., 表名n;
 mysql> DROP TABLE IF EXISTS 表名;
 ```
 
-#### 表结构
+#### 查看表结构
 
 - `DESCRIBE 表名`
 - `DESC 表名`
@@ -61,7 +61,7 @@ mysql> DESC 表名;
 mysql> DESC 数据库名.表名;
 ```
 
-#### 修改表
+#### 修改数据表
 
 ##### 表名称
 
