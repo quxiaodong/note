@@ -6,6 +6,7 @@
 - [linux](/linux/README.md)
 - [miniprogram](/miniprogram/README.md)
 - [monorepo](/monorepo/README.md)
+- [mysql](/mysql/README.md)
 - [npm](/npm/README.md)
 - [openlayers](/openlayers/README.md)
 - [regexp](/regexp/README.md)
