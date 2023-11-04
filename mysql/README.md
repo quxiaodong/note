@@ -1,9 +1,6 @@
-#### 客户端
-
-- [base](/mysql/client/base.md)
-- [column](/mysql/client/column.md)
-- [database](/mysql/client/database.md)
-- [insert](/mysql/client/insert.md)
-- [table](/mysql/client/table.md)
-
-#### 服务器
+- [base](/mysql/base.md)
+- [column](/mysql/column.md)
+- [database](/mysql/database.md)
+- [insert](/mysql/insert.md)
+- [select](/mysql/select.md)
+- [table](/mysql/table.md)
