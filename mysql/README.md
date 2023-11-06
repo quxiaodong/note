@@ -1,6 +1,8 @@
 - [base](/mysql/base.md)
 - [column](/mysql/column.md)
 - [database](/mysql/database.md)
+- [delete](/mysql/delete.md)
 - [insert](/mysql/insert.md)
 - [select](/mysql/select.md)
 - [table](/mysql/table.md)
+- [update](/mysql/update.md)
