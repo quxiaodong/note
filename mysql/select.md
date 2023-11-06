@@ -19,15 +19,32 @@ mysql> SELECT 列名1, ..., 列名n FROM 表名;
 mysql> SELECT 列名 [AS] 列的别名 FROM 表名;
 ```
 
+#### AVG
+
+```mysql
+# 计算指定列的平均值
+mysql> SELECT AVG(列名) FROM 表名;
+```
+
+#### COUNT
+
+```mysql
+# 对所有列进行计数，不会过滤值为NULL的行
+mysql> SELECT COUNT(*) FROM 表名;
+
+# 对指定列进行计数，会过滤值为NULL的行
+mysql> SELECT COUNT(列名) FROM 表名;
+```
+
 #### DISTINCT
 
 ```mysql
-# 每条数据中指定列的值都相同
+# 过滤每条数据中指定列相同的值
 mysql> SELECT DISTINCT 列名 FROM 表名;
 ```
 
 ```mysql
-# 每条数据中指定多个列的值都相同
+# 过滤每条数据中指定多个列都相同的值
 mysql> SELECT DISTINCT 列名1, ..., 列名n FROM 表名;
 ```
 
@@ -39,6 +56,20 @@ mysql> SELECT 列名1, ..., 列名n FROM 表名 LIMIT 起始行数, 限制条数
 
 > `LIMIT`后面只有一个参数时，代表的是限制条数，起始行数默认为`0`
 
+#### MAX
+
+```mysql
+# 查询指定列的最大值
+mysql> SELECT MAX(列名) FROM 表名;
+```
+
+#### MIN
+
+```mysql
+# 查询指定列的最小值
+mysql> SELECT MIN(列名) FROM 表名;
+```
+
 #### ORDER
 
 ```mysql
@@ -49,6 +80,13 @@ mysql> SELECT * FROM 表名 ORDER BY 列名 ASC|DESC;
 ```mysql
 # 多个列
 mysql> SELECT * FROM 表名 ORDER BY 列名1 ASC|DESC, 列名2 ASC|DESC;
+```
+
+#### SUM
+
+```mysql
+# 计算指定列的和
+mysql> SELECT SUM(列名) FROM 表名;
 ```
 
 #### WHERE
@@ -69,6 +107,7 @@ mysql> SELECT * FROM 表名 ORDER BY 列名1 ASC|DESC, 列名2 ASC|DESC;
 | `IS NOT NULL` | 值不是`NULL` | SELECT * FROM 表名 WHERE 列名 IS NOT NULL; |
 | `AND` | 满足全部条件 | SELECT * FROM 表名 WHERE 列名1 = 值 AND 列名2 > 值; |
 | `OR` | 满足其中一个条件 | SELECT * FROM 表名 WHERE 列名1 = 值 OR 列名2 > 值; |
+| `XOR` | 有且只有一个条件为真 | SELECT * FROM 表名 WHERE 列名1 = 值 XOR 列名2 > 值; |
 | `LIKE` | 匹配 | SELECT * FROM 表名 WHERE 列名 LIKE '值%'; |
 | `NOT LIKE` | 不匹配 | SELECT * FROM 表名 WHERE 列名 NOT LIKE '值_'; |
 
