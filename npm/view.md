@@ -12,3 +12,8 @@ cmd > npm view antd version
 # 查看历史版本
 cmd > npm view antd versions
 ```
+
+```bash
+# 获取压缩包下载地址
+cmd > npm view antd dist.tarball
+```
