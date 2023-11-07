@@ -27,9 +27,9 @@ mysql> INSERT INTO user(nickname, age, gender) VALUES
 ```
 
 ```mysql
-mysql> SELECT gender, avg(age) FROM user GROUP BY gender;
+mysql> SELECT gender, AVG(age) FROM user GROUP BY gender;
 +--------+----------+
-| gender | avg(age) |
+| gender | AVG(age) |
 +--------+----------+
 | male   |  20.0000 |
 | female |  30.0000 |
@@ -39,12 +39,12 @@ mysql> SELECT gender, avg(age) FROM user GROUP BY gender;
 ```
 
 ```mysql
-mysql> SELECT gender FROM user GROUP BY gender HAVING gender IS NOT NULL;
-+--------+
-| gender |
-+--------+
-| male   |
-| female |
-+--------+
-2 rows in set (0.01 sec)
+mysql> SELECT gender, AVG(age) FROM user GROUP BY gender HAVING gender IS NOT NULL;
++--------+----------+
+| gender | AVG(age) |
++--------+----------+
+| male   |  20.0000 |
+| female |  30.0000 |
++--------+----------+
+2 rows in set (0.00 sec)
 ```
