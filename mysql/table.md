@@ -51,6 +51,7 @@ mysql> DROP TABLE IF EXISTS 表名;
 - `EXPLAIN 表名`
 - `SHOW COLUMNS FROM 表名`
 - `SHOW FIELDS FROM 表名`
+- `SHOW CREATE TABLE 表名`
 
 ```mysql
 mysql> DESC 表名;

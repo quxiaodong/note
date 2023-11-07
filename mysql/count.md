@@ -42,3 +42,14 @@ mysql> SELECT COUNT(gender) FROM user;
 +---------------+
 1 row in set (0.00 sec)
 ```
+
+```mysql
+# 可以先过滤重复的值，再计数
+mysql> SELECT COUNT(DISTINCT gender) FROM user;
++------------------------+
+| COUNT(DISTINCT gender) |
++------------------------+
+|                      2 |
++------------------------+
+1 row in set (0.00 sec)
+```
