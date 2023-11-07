@@ -19,7 +19,7 @@
 | [AS](/mysql/as.md) | 设置列别名 |
 | [AVG](/mysql/avg.md) | 计算指定列的平均值 |
 | [COUNT](/mysql/count.md) | 计算共有多少条数据 |
-| [DISTINCT] | 过滤指定列中相同的值 |
+| [DISTINCT](/mysql/distinct.md) | 过滤指定列中相同的值 |
 | [LIMIT](/mysql/limit.md) | 限制查询数量 |
 | [MAX](/mysql/max.md) | 查询指定列的最大值 |
 | [MIN](/mysql/min.md) | 查询指定列的最小值 |

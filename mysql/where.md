@@ -21,3 +21,76 @@
 > 1. `%`匹配0~n个字符
 > 2. `_`匹配一个字符
 > 3. `AND`操作符的优先级高于`OR`操作符
+
+```mysql
+mysql> CREATE TABLE user(
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nickname VARCHAR(10),
+  age INT,
+  gender ENUM('male', 'female')
+);
+
+mysql> INSERT INTO user(nickname, age, gender) VALUES
+  ('a', 10, 'male'),
+  ('b', 20, 'female'),
+  ('c', 30, 'male'),
+  ('d', 40, 'female'),
+  ('e', 50, NULL)
+;
+```
+
+```mysql
+mysql> SELECT * FROM user WHERE age BETWEEN 20 AND 40;
++----+----------+------+--------+
+| id | nickname | age  | gender |
++----+----------+------+--------+
+|  2 | b        |   20 | female |
+|  3 | c        |   30 | male   |
+|  4 | d        |   40 | female |
++----+----------+------+--------+
+3 rows in set (0.00 sec)
+```
+
+```mysql
+mysql> SELECT * FROM user WHERE gender IN ('male', 'female');
++----+----------+------+--------+
+| id | nickname | age  | gender |
++----+----------+------+--------+
+|  1 | a        |   10 | male   |
+|  2 | b        |   20 | female |
+|  3 | c        |   30 | male   |
+|  4 | d        |   40 | female |
++----+----------+------+--------+
+4 rows in set (0.00 sec)
+```
+
+```mysql
+mysql> SELECT * FROM user WHERE gender IS NULL;
++----+----------+------+--------+
+| id | nickname | age  | gender |
++----+----------+------+--------+
+|  5 | e        |   50 | NULL   |
++----+----------+------+--------+
+1 row in set (0.00 sec)
+```
+
+```mysql
+mysql> SELECT * FROM user WHERE gender = 'male' AND age > 20;
++----+----------+------+--------+
+| id | nickname | age  | gender |
++----+----------+------+--------+
+|  3 | c        |   30 | male   |
++----+----------+------+--------+
+1 row in set (0.00 sec)
+```
+
+```mysql
+mysql> SELECT * FROM user WHERE gender LIKE 'fe%';
++----+----------+------+--------+
+| id | nickname | age  | gender |
++----+----------+------+--------+
+|  2 | b        |   20 | female |
+|  4 | d        |   40 | female |
++----+----------+------+--------+
+2 rows in set (0.00 sec)
+```
