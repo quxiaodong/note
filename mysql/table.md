@@ -4,7 +4,7 @@
 mysql> SHOW TABLES;
 ```
 
-```
+```mysql
 # 使用FROM来指定查看哪个数据库名的表
 mysql> SHOW TABLES FROM 数据库名;
 ```

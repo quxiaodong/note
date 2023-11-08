@@ -4,6 +4,7 @@
 - [column](/mysql/column.md)
 - [database](/mysql/database.md)
 - [table](/mysql/table.md)
+- [trigger](/mysql/trigger.md)
 
 #### 增删改查
 
@@ -19,6 +20,7 @@
 | [AS](/mysql/as.md) | 设置列别名 |
 | [AVG](/mysql/avg.md) | 计算指定列的平均值 |
 | [COUNT](/mysql/count.md) | 计算共有多少条数据 |
+| [DELIMITER](/mysql/delimiter.md) | 自定义结束符 |
 | [DISTINCT](/mysql/distinct.md) | 过滤指定列中相同的值 |
 | [GROUP](/mysql/group.md) | 分组 |
 | [LIMIT](/mysql/limit.md) | 限制查询数量 |
