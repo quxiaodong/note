@@ -3,15 +3,16 @@
 - [base](/mysql/base.md)
 - [column](/mysql/column.md)
 - [database](/mysql/database.md)
+- [event](/mysql/event.md)
 - [table](/mysql/table.md)
 - [trigger](/mysql/trigger.md)
 
 #### 增删改查
 
-- [delete](/mysql/delete.md)
-- [insert](/mysql/insert.md)
-- [select](/mysql/select.md)
-- [update](/mysql/update.md)
+- [DELETE](/mysql/delete.md)
+- [INSERT](/mysql/insert.md)
+- [SELECT](/mysql/select.md)
+- [UPDATE](/mysql/update.md)
 
 #### 常用命令
 

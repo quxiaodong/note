@@ -13,8 +13,8 @@ mysql> SHOW CREATE TRIGGER 触发器名;
 
 ```mysql
 mysql> CREATE TRIGGER 触发器名
-  {BEFORE|AFTER}
-  {INSERT|DELETE|UPDATE}
+  {BEFORE | AFTER}
+  {INSERT | DELETE | UPDATE}
   ON 表名
   FOR EACH ROW
   BEGIN
@@ -46,8 +46,7 @@ mysql> INSERT INTO user(nickname, age, gender) VALUES
   ('b', 20, 'female'),
   ('c', 30, 'male'),
   ('d', 40, 'female'),
-  ('e', 50, NULL)
-;
+  ('e', 50, NULL);
 ```
 
 ```mysql
