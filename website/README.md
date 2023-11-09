@@ -15,6 +15,10 @@
 
 - shadows.brumm.af
 
+#### canvas
+
+- benchmarks.slaylines.io
+
 #### css reset
 
 - meyerweb.com/eric/tools

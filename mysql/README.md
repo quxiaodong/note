@@ -2,11 +2,12 @@
 
 - [base](/mysql/base.md)
 - [column](/mysql/column.md)
-- [database](/mysql/database.md)
-- [event](/mysql/event.md)
-- [table](/mysql/table.md)
-- [trigger](/mysql/trigger.md)
-- [view](/mysql/view.md)
+- [DATABASE](/mysql/database.md)
+- [EVENT](/mysql/event.md)
+- [FUNCTION](/mysql/function.md)
+- [TABLE](/mysql/table.md)
+- [TRIGGER](/mysql/trigger.md)
+- [VIEW](/mysql/view.md)
 
 #### 增删改查
 

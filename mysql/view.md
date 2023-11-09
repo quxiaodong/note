@@ -37,10 +37,6 @@ mysql> INSERT INTO user(nickname, age, gender) VALUES
 mysql> CREATE VIEW searchUser AS SELECT * FROM user;
 ```
 
-#### 使用视图
-
-> 视图也可以被称为虚拟表，因为我们可以跟表一样进行增删改查
-
 ```mysql
 mysql> SELECT nickname FROM searchUser WHERE gender IS NULL;
 +----------+
@@ -50,6 +46,8 @@ mysql> SELECT nickname FROM searchUser WHERE gender IS NULL;
 +----------+
 1 row in set (0.01 sec)
 ```
+
+> 视图也可以被称为虚拟表，因为我们可以跟表一样进行增删改查
 
 #### 删除视图
 

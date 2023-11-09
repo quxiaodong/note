@@ -19,7 +19,6 @@ mysql> CREATE EVENT 事件名
   BEGIN
     具体的语句
   END
-;
 ```
 
 ##### 案例
@@ -72,10 +71,8 @@ mysql> DELIMITER ;
 mysql> DROP EVENT 事件名;
 ```
 
-#### 启动事件
+#### 注意事项
 
-```mysql
-mysql> SET GLOBAL event_scheduler = ON;
-```
+> 如果事件没有按预期执行，需要设置`SET GLOBAL event_scheduler = ON;`
 
-> event执行完后默认会删除
+> 事件执行完后默认会删除

@@ -20,7 +20,6 @@ mysql> CREATE TRIGGER 触发器名
   BEGIN
     触发器内容
   END
-;
 ```
 
 > - `BEFORE`: 在执行操作前调用触发器内容
