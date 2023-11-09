@@ -11,10 +11,10 @@ mysql> SHOW CREATE FUNCTION 函数名;
 #### 创建函数
 
 ```mysql
-mysql> CREATE FUNCTION 存储函数名([参数1 数据类型, ..., 参数n 数据类型])
+mysql> CREATE FUNCTION 函数名([参数1 数据类型, ..., 参数n 数据类型])
   RETURNS 返回值类型
   BEGIN
-    函数体内容
+    执行语句
   END
 ```
 

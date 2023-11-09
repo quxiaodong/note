@@ -5,6 +5,7 @@
 - [DATABASE](/mysql/database.md)
 - [EVENT](/mysql/event.md)
 - [FUNCTION](/mysql/function.md)
+- [PROCEDURE](/mysql/procedure.md)
 - [TABLE](/mysql/table.md)
 - [TRIGGER](/mysql/trigger.md)
 - [VIEW](/mysql/view.md)
