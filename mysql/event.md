@@ -60,7 +60,7 @@ mysql> CREATE EVENT insertData
   EVERY 1 MINUTE STARTS NOW() ENDS DATE_ADD(NOW(), INTERVAL 3 MINUTE)
   DO
   BEGIN
-    INSERT INTO user(nickname, age, gender) VALUES(DATE_FORMAT(NOW(), '%h:%i:%s'), 60, NULL);
+    INSERT INTO user(nickname, age, gender) VALUES(CURTIME(), 100, NULL);
   END
 $
 mysql> DELIMITER ;

@@ -6,6 +6,7 @@
 - [event](/mysql/event.md)
 - [table](/mysql/table.md)
 - [trigger](/mysql/trigger.md)
+- [view](/mysql/view.md)
 
 #### 增删改查
 
