@@ -1,0 +1,1 @@
+- <a href="openlayers/extent/methods/containsCoordinate.html" target="_blank">containsCoordinate</a>
