@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7/ol.css">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-body">
+        <div id="map" style="height: 50vh;"></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <p class="card-text" id="tip">Zoom the map</p>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/throttle-debounce@5.0.0/umd/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ol@v7/dist/ol.js"></script>
+  <script>
+    const map = new ol.Map({
+      target: 'map',
+      view: new ol.View({
+        projection: 'EPSG:4326',
+        center: [0, 0],
+        zoom: 0
+      }),
+      layers: [
+        new ol.layer.Tile({
+          source: new ol.source.OSM()
+        })
+      ]
+    })
+
+    let clusterOverlays = []
+    const clusterCoordinates = []
+
+    for (let y = 2; y >= -2; y -= 2) {
+      for (let x = -10; x <= 10; x += 2) {
+        addOverlay([[x, y]])
+        clusterCoordinates.push([x, y])
+      }
+    }
+
+    // 每个点聚合的像素间隔
+    const pixel = 50
+
+    // 创建普通overlay
+    function createNormalOverlay(position) {
+      const element = document.createElement('span')
+      element.className = 'badge rounded-pill text-bg-secondary'
+      element.innerText = '*'
+
+      return new ol.Overlay({
+        element,
+        position,
+        positioning: 'center-center'
+      })
+    }
+
+    // 创建聚合overlay
+    function createClusterOverlay(neighbors, extent) {
+      const element = document.createElement('span')
+      element.className = 'badge rounded-pill text-bg-primary'
+      element.innerText = neighbors.length
+
+      return new ol.Overlay({
+        element,
+        position: ol.extent.getCenter(extent),
+        positioning: 'center-center'
+      })
+    }
+
+    // 添加overlay
+    function addOverlay(neighbors, extent) {
+      const overlay = neighbors.length === 1
+        ? createNormalOverlay(neighbors[0])
+        : createClusterOverlay(neighbors, extent)
+
+      map.addOverlay(overlay)
+      clusterOverlays.push(overlay)
+    }
+
+    function refreshOverlay() {
+      // 清空overlay
+      clusterOverlays.forEach(overlay => map.removeOverlay(overlay))
+      clusterOverlays = []
+
+      const cluster = {}
+      const distance = pixel * map.getView().getResolution()
+
+      clusterCoordinates.forEach((item, index) => {
+        const id = item.join(',')
+        if (cluster[id]) return
+        cluster[id] = true
+
+        const extent = ol.extent.buffer(item.concat(item), distance)
+
+        const neighbors = clusterCoordinates.filter(item => {
+          const id = item.join(',')
+          if (!cluster[id] && ol.extent.containsCoordinate(extent, item)) {
+            return cluster[id] = true
+          }
+          return false
+        })
+
+        const totalCoordinates = neighbors.concat([item])
+
+        addOverlay(
+          totalCoordinates,
+          ol.extent.boundingExtent(totalCoordinates)
+        )
+      })
+    }
+
+    map.getView().fit(
+      ol.extent.boundingExtent(clusterCoordinates),
+      { padding: [10, 40, 10, 40] }
+    )
+
+    map.getView().on(
+      'change:resolution',
+      throttleDebounce.debounce(300, refreshOverlay)
+    )
+  </script>
+</body>
+</html>
