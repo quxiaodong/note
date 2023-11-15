@@ -69,6 +69,13 @@
       element.className = 'badge rounded-pill text-bg-primary'
       element.innerText = neighbors.length
 
+      element.onclick = () => {
+        map.getView().fit(
+          ol.extent.boundingExtent(neighbors),
+          { duration: 500, padding: [40, 40, 40, 40] }
+        )
+      }
+
       return new ol.Overlay({
         element,
         position: ol.extent.getCenter(extent),
