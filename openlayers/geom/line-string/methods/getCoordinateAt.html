@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7/ol.css">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-body">
+        <div id="map" style="height: 50vh;"></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body d-flex align-items-center">
+        <label for="range" class="flex-shrink-0 pe-3">Move the range</label>
+        <input type="range" class="form-range" min="0" max="1" step="0.02" value="0" id="range">
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ol@v7/dist/ol.js"></script>
+  <script>
+    const lineGeom = new ol.geom.LineString([[-30, 0], [30, 0]])
+    const lineFeature = new ol.Feature(lineGeom)
+
+    const pointGeom = new ol.geom.Point([-30, 0])
+    const pointFeature = new ol.Feature(pointGeom)
+
+    new ol.Map({
+      target: 'map',
+      view: new ol.View({
+        projection: 'EPSG:4326',
+        center: [0, 0],
+        zoom: 0
+      }),
+      layers: [
+        new ol.layer.Tile({
+          source: new ol.source.OSM()
+        }),
+        new ol.layer.Vector({
+          source: new ol.source.Vector({ features: [lineFeature, pointFeature] })
+        })
+      ]
+    })
+
+    document.getElementById('range').addEventListener('input', e => {
+      pointGeom.setCoordinates(lineGeom.getCoordinateAt(e.target.value))
+    })
+  </script>
+</body>
+</html>
