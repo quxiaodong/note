@@ -9,7 +9,3 @@
 #### 事件监听
 
 - <a href="openlayers/view/methods/setCenter.html" target="_blank">change:center</a>
-
-#### 常见用法
-
-- <a href="openlayers/view/linkage.html" target="_blank">地图联动</a>

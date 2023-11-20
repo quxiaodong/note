@@ -8,7 +8,3 @@
 #### 事件监听
 
 - <a href="openlayers/overlay/methods/setPosition.html" target="_blank">change:position</a>
-
-#### 常见用法
-
-- <a href="openlayers/overlay/cluster.html" target="_blank">cluster</a>

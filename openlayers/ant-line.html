@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7/ol.css">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-body">
+        <div id="map" style="height: 50vh;"></div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/throttle-debounce@5.0.0/umd/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ol@v7/dist/ol.js"></script>
+  <script>
+    const feature = new ol.Feature(
+      new ol.geom.LineString([[-30, -30], [-30, 30], [30, 30], [30, -30], [-30, -30]])
+    )
+
+    const map = new ol.Map({
+      target: 'map',
+      view: new ol.View({
+        projection: 'EPSG:4326',
+        center: [0, 0],
+        zoom: 0
+      }),
+      layers: [
+        new ol.layer.Tile({
+          source: new ol.source.OSM()
+        }),
+        new ol.layer.Vector({
+          source: new ol.source.Vector({ features: [feature] }),
+          style: styleFunction
+        })
+      ]
+    })
+
+    function styleFunction(feature) {
+      const geometry = feature.getGeometry()
+
+      const styles = [
+        new ol.style.Style({
+          stroke: new ol.style.Stroke({ width: 6, color: '#2296f0' })
+        })
+      ]
+
+      // 存储每段线条数据
+      const segments = []
+      geometry.forEachSegment((start, end) => {
+        const dx = end[0] - start[0]
+        const dy = end[1] - start[1]
+        const rotation = Math.atan2(dy, dx)
+        segments.push({
+          extent: new ol.extent.boundingExtent([start, end]),
+          rotation
+        })
+      })
+
+      // 每个箭头间隔像素
+      const step = 40
+      // 箭头间隔地理长度
+      const stepDistance = step * map.getView().getResolution()
+      // 整条线段地理长度
+      const totalDistance = geometry.getLength()
+      // 一共有多少个箭头
+      const count = Math.floor(totalDistance / stepDistance)
+      for(let i = 1; i < count; i++) {
+        const coordinate = geometry.getCoordinateAt(i / count)
+        const index = segments.findIndex(item => ol.extent.containsCoordinate(item.extent, coordinate))
+        if (index === -1) return
+
+        styles.push(
+          new ol.style.Style({
+            geometry: new ol.geom.Point(coordinate),
+            image: new ol.style.Icon({
+              src: './static/arrow.png',
+              scale: 0.2,
+              anchor: [0.5, 0.5],
+              rotateWithView: true,
+              rotation: -segments[index].rotation
+            })
+          })
+        )
+      }
+
+      return styles
+    }
+  </script>
+</body>
+</html>

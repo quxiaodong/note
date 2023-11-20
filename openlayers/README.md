@@ -8,3 +8,9 @@
 - [Overlay](/openlayers/overlay/README.md)
 - [source](/openlayers/source/README.md)
 - [View](/openlayers/view/README.md)
+
+#### 常见用法
+
+- <a href="openlayers/ant-line.html" target="_blank">蚂蚁线</a>
+- <a href="openlayers/linkage.html" target="_blank">地图联动</a>
+- <a href="openlayers/overlay-cluster.html" target="_blank">Overlay聚合</a>
