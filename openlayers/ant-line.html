@@ -40,7 +40,7 @@
       ]
     })
 
-    function styleFunction(feature) {
+    function styleFunction(feature, resolution) {
       const geometry = feature.getGeometry()
 
       const styles = [
@@ -56,15 +56,15 @@
         const dy = end[1] - start[1]
         const rotation = Math.atan2(dy, dx)
         segments.push({
-          extent: new ol.extent.boundingExtent([start, end]),
-          rotation
+          rotation,
+          extent: new ol.extent.boundingExtent([start, end])
         })
       })
 
       // 每个箭头间隔像素
       const step = 40
       // 箭头间隔地理长度
-      const stepDistance = step * map.getView().getResolution()
+      const stepDistance = step * resolution
       // 整条线段地理长度
       const totalDistance = geometry.getLength()
       // 一共有多少个箭头

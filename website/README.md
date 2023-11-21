@@ -1,3 +1,11 @@
+#### animation
+
+- animejs.com
+- github.com/michalsnik/aos
+- github.com/visionmedia/move.js
+- github.com/mamunhpath/josh.js
+- tweenjs.github.io/tween.js
+
 #### apis
 
 - jsonplaceholder.typicode.com
