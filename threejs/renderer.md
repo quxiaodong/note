@@ -1,6 +1,11 @@
-- setSize: 设置画布尺寸
+```javascript
+const renderer = new THREE.WebGLRenderer()
+
+document.body.appendChild(renderer.domElement)
+```
 
 ```javascript
-// 比如要绘制一个圆，但是画布的宽和高不一致时，会变成椭圆
-// renderer.setSize(window.innerWidth, window.innerHeight)
+const renderer = new THREE.WebGLRenderer({
+  canvas: document.querySelector('canvas')
+})
 ```

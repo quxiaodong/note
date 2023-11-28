@@ -16,12 +16,12 @@ const geometry = new THREE.SphereGeometry(15)
 // 材质
 const material = new THREE.MeshBasicMaterial({ color: 0xffff00 })
 // 物体 = 图形 + 材质
-const sphere = new THREE.Mesh(geometry, material)
+const mesh = new THREE.Mesh(geometry, material)
 ```
 
 ```javascript
-// 场景中添加物体
-scene.add(sphere)
+// 场景中添加物体，默认情况下物体的坐标是(0,0,0)
+scene.add(mesh)
 // 设置相机视角
 camera.position.set(0, 0, 100)
 // 渲染
