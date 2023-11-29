@@ -1,3 +1,4 @@
 - [Draw](/openlayers/interaction/draw/README.md)
 - [Modify](/openlayers/interaction/modify/README.md)
+- [Select](/openlayers/interaction/select/README.md)
 - [Translate](/openlayers/interaction/translate/README.md)
