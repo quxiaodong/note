@@ -660,7 +660,7 @@
     const geoJSON = new ol.format.GeoJSON()
     const features = geoJSON.readFeatures(data)
 
-    const map = new ol.Map({
+    new ol.Map({
       target: 'map',
       view: new ol.View({
         projection: 'EPSG:4326',
@@ -672,21 +672,7 @@
           source: new ol.source.OSM()
         }),
         new ol.layer.Vector({
-          source: new ol.source.Vector({ features }),
-          style: feature => new ol.style.Style({
-            stroke: new ol.style.Stroke({
-              color: 'rgba(240, 128, 128, 1)',
-              width: 1
-            }),
-            fill: new ol.style.Fill({
-              color: 'rgba(240, 128, 128, 0.5)'
-            }),
-            text: new ol.style.Text({
-              text: feature.get('name'),
-              font: '14px sans-serif',
-              fill: new ol.style.Fill({ color: 'white' })
-            })
-          })
+          source: new ol.source.Vector({ features })
         })
       ]
     })

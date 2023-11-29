@@ -15,7 +15,7 @@
     </div>
     <div class="card">
       <div class="card-body">
-        <p class="card-text" id="tip">Click the feature</p>
+        <p class="card-text">Click the feature</p>
       </div>
     </div>
   </div>
@@ -696,16 +696,21 @@
       ]
     })
 
-    const tip = document.getElementById('tip')
-    const select = new ol.interaction.Select()
-
-    select.on('select', event => {
-      const feature = event.selected[0]
-      if (feature) {
-        tip.innerText = 'Selected: ' + feature.get('name')
-      } else {
-        tip.innerText = 'Click the feature'
-      }
+    const select = new ol.interaction.Select({
+      style: feature => new ol.style.Style({
+        stroke: new ol.style.Stroke({
+          color: 'rgba(144, 283, 144, 1)',
+          width: 1
+        }),
+        fill: new ol.style.Fill({
+          color: 'rgba(144, 283, 144, 0.5)'
+        }),
+        text: new ol.style.Text({
+          text: feature.get('name'),
+          font: '14px sans-serif',
+          fill: new ol.style.Fill({ color: 'white' })
+        })
+      })
     })
 
     map.addInteraction(select)
