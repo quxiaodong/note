@@ -13,6 +13,7 @@
 - api.github.com
 - mockaroo.com
 - easy-mock.com
+- framer.com/motion/animation
 
 #### border-radius
 

@@ -22,6 +22,18 @@
 import { sum } from 'utils'
 ```
 
+#### esModuleInterop
+
+针对多个文件里面有相同的变量名
+
+```json
+{
+  "compilerOptions": {
+    "esModuleInterop": true
+  }
+}
+```
+
 #### exclude
 
 只对`include`的配置起作用
