@@ -1,7 +1,14 @@
-#### 使用案例
+```json
+// tsconfig.json
+{
+  "include": [
+    "typings/**/*.d.ts"
+  ]
+}
+```
 
 ```typescript
-// typings.d.ts
+// typings/wx.d.ts
 declare namespace wx {
 
   type jsApi = 'chooseImage'

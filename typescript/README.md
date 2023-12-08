@@ -3,7 +3,6 @@
 - [assert](/typescript/assert.md)
 - [enum](/typescript/enum.md)
 - [generic](/typescript/generic.md)
-- [namespace](/typescript/namespace.md)
 - [object](/typescript/object.md)
 - [typeof](/typescript/typeof.md)
 
@@ -17,3 +16,8 @@
 
 - [tsc](/typescript/tsc.md)
 - [tsconfig](/typescript/tsconfig.md)
+
+#### 使用案例
+
+- [declare-module](/typescript/declare-module.md)
+- [declare-namespace](/typescript/declare-namespace.md)
