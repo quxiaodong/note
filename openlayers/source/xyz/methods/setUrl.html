@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7/ol.css">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-body">
+        <div id="map" style="height: 50vh;"></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <select class="form-select" id="style" onchange="change()">
+          <option selected disabled>Select the style</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <select class="form-select" id="ltype" onchange="change()">
+          <option selected disabled>Select the ltype</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="11">11</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ol@v7/dist/ol.js"></script>
+  <script>
+    const getUrl = (style, ltype)=> {
+      return `http://wprd0{1-4}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&style=${style}&ltype=${ltype}&x={x}&y={y}&z={z}`
+    }
+
+    const xyz = new ol.source.XYZ({ url: '' })
+
+    new ol.Map({
+      target: 'map',
+      view: new ol.View({
+        center: [116.40, 39.91],
+        zoom: 14,
+        projection: 'EPSG:4326',
+      }),
+      layers: [
+        new ol.layer.Tile({ source: xyz }),
+        new ol.layer.Vector({
+          source: new ol.source.Vector({ features: [
+            new ol.Feature(new ol.geom.Point([116.40, 39.91]))
+          ]})
+        })
+      ]
+    })
+
+    function change() {
+      xyz.setUrl(getUrl(
+        document.getElementById('style').value,
+        document.getElementById('ltype').value
+      ))
+    }
+  </script>
+</body>
+</html>
