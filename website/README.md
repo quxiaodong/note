@@ -5,6 +5,7 @@
 - github.com/visionmedia/move.js
 - github.com/mamunhpath/josh.js
 - tweenjs.github.io/tween.js
+- popmotion.io
 
 #### apis
 
