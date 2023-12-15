@@ -53,7 +53,7 @@
     new ol.Map({
       target: 'map',
       view: new ol.View({
-        center: [116.40, 39.91],
+        center: [116.39745499748928, 39.90918482763441],
         zoom: 14,
         projection: 'EPSG:4326'
       }),
@@ -61,7 +61,7 @@
         new ol.layer.Tile({ source: xyz }),
         new ol.layer.Vector({
           source: new ol.source.Vector({ features: [
-            new ol.Feature(new ol.geom.Point([116.40, 39.91]))
+            new ol.Feature(new ol.geom.Point([116.39745499748928, 39.90918482763441]))
           ]})
         })
       ]
