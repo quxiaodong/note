@@ -13,23 +13,41 @@
         <div id="map" style="height: 50vh;"></div>
       </div>
     </div>
+    <div class="card">
+      <div class="card-body">
+        <p class="card-text">当前坐标系：EPSG:4326</p>
+      </div>
+    </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/ol@v7/dist/ol.js"></script>
   <script>
-    new ol.Map({
+    const point = new ol.geom.Point([116.40, 39.91])
+
+    const map = new ol.Map({
       target: 'map',
       view: new ol.View({
-        center: [0, 0],
-        zoom: 0
+        center: [116.40, 39.91],
+        zoom: 14,
+        projection: 'EPSG:4326'
       }),
       layers: [
         new ol.layer.Tile({
           source: new ol.source.XYZ({
             url: 'http://wprd0{1-4}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&style=7&x={x}&y={y}&z={z}'
           })
+        }),
+        new ol.layer.Vector({
+          source: new ol.source.Vector({
+            features: [new ol.Feature(point)]
+          })
         })
       ]
+    })
+
+    map.on('singleclick', e => {
+      console.log(e)
+      point.setCoordinates(e.coordinate)
     })
   </script>
 </body>
