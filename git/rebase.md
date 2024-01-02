@@ -80,3 +80,43 @@ git log --oneline
 # 强制推送到远程仓库
 git push -f
 ```
+
+#### 拆分commit(多个文件)
+
+```bash
+# 查看历史提交记录
+git log --oneline
+
+# efd3942 (HEAD -> master, origin/master) This is second commit
+# 7a63c34 This is first commit
+# eb6a385 initial commit
+```
+
+```bash
+git rebase -i HEAD~3
+
+# pick eb6a385 initial commit
+# edit 7a63c34 This is first commit
+# pick efd3942 This is second commit
+
+# reset 到那次 commit 的上一个 commit
+git reset HEAD^
+
+# 按需新增
+git add a.md
+git commit -m 'This is first 1 commit'
+
+git add b.md
+git commit -m 'This is first 2 commit'
+
+# 修改完毕
+git rebase --continue
+```
+
+```bash
+# 查看更新后的提交记录
+git log --oneline
+
+# 强制推送到远程仓库
+git push -f
+```
