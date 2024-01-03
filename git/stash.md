@@ -4,12 +4,20 @@
 # 修改某个文件
 echo $(date) >> README.md
 
-# 存储当前修改
+# 存储当前修改，并使用默认描述
+git stash save
+# 存储当前修改，并使用定义描述
 git stash save "2023-09-20 10:24"
 
 # 查看存储列表
 git stash list
 # stash@{0}: On main: 2023-09-20 10:24
+```
+
+- `--include-untracked`: 暂存修改过的文件以及未跟踪的文件
+
+```bash
+git stash save "2023-09-20 10:24" --include-untracked
 ```
 
 > 最新创建的存储永远为0
