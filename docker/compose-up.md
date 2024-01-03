@@ -10,6 +10,12 @@ cmd > docker compose up [OPTIONS] [SERVICE...]
 cmd > docker compose up -d
 ```
 
+- `-f`: 指定配置文件
+
+```bash
+cmd > docker compose -f development.yml up -d
+```
+
 #### 指定服务
 
 ```yml
