@@ -15,6 +15,7 @@
 - [grid](/css/grid/README.md)
 - [loading](/css/loading/README.md)
 - [login-form](/css/login-form/README.md)
+- [mix-blend-mode](/css/mix-blend-mode/README.md)
 - [radar](/css/radar/README.md)
 - [scroll-list](/css/scroll-list/README.md)
 - [sticky-footer](/css/sticky-footer/README.md)
