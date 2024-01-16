@@ -28,4 +28,11 @@ git branch -d branchName
 git push origin -d branchName
 ```
 
+#### 常用选项
+
+```bash
+# 重命名当前的分支
+git branch -m branchName
+```
+
 ![https://nvie.com/posts/a-successful-git-branching-model/](./static/branch-model.png)
