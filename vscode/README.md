@@ -1,0 +1,3 @@
+- 自动排序引入的顺序
+  - mac: `option` + `shift` + `o`
+  - windows: `control` + `shift` + `o`
