@@ -1,5 +1,7 @@
 > 修改首次提交: `git rebase -i --root`
 
+> `rebase`会改变commit的hash值
+
 #### 合并连续的提交记录
 
 ```bash
@@ -120,5 +122,35 @@ git rebase --continue
 git log --oneline
 
 # 强制推送到远程仓库
+git push -f
+```
+
+#### 分支合并变基
+
+```
+A - B - C
+         \
+          D - E
+```
+
+```
+A - B - C - B1
+         \
+          D - E
+```
+
+```bash
+git checkout main
+# 把B1合进B，会改变B的hash
+git rebase
+git push -f
+
+git checkout development
+# 合并分支
+git merge main --no-commit
+# 删除main上面旧的commit
+# 把main上面新的commit往前移
+# 顺序匹配main分支
+git rebase
 git push -f
 ```
