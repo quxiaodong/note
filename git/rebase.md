@@ -148,6 +148,8 @@ git push -f
 git checkout development
 # 合并分支
 git merge main --no-commit
+# 解决冲突
+git push
 # 删除main上面旧的commit
 # 把main上面新的commit往前移
 # 顺序匹配main分支
