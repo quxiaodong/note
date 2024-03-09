@@ -85,6 +85,49 @@ git log --oneline
 git push -f
 ```
 
+#### 修改远程提交记录
+
+```bash
+# 查看历史提交记录
+git log --oneline
+
+# 8bb3f0b (HEAD -> main, origin/main) This is second commit
+# b9c8ea9 This is first commit
+# 69b2d0c initial commit
+```
+
+```bash
+# 选择需要修改的提交
+git rebase -i HEAD~2
+
+# edit b9c8ea9 This is first commit
+# pick 8bb3f0b This is second commit
+```
+
+```bash
+# 修改以后
+git add .
+git commit --amend
+# 此时，这次修改会合并到同一个commit
+
+# 修改以后
+git add .
+git commit -m "new commit"
+# 此时，这次修改会生成一条新的commit
+```
+
+```bash
+git rebase --continue
+```
+
+```bash
+# 查看更新后的提交记录
+git log --oneline
+
+# 强制推送到远程仓库
+git push -f
+```
+
 #### 拆分commit(多个文件)
 
 ```bash
