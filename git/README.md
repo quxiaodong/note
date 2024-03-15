@@ -8,3 +8,11 @@
 - [restore](/git/restore.md)
 - [stash](/git/stash.md)
 - [workspace](/git/workspace.md)
+
+#### 强制拉取代码
+
+```
+git fetch --all
+git reset --hard origin/main
+git pull origin main
+```
