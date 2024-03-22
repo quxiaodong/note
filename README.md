@@ -13,4 +13,5 @@
 - [regexp](/regexp/README.md)
 - [ssh](/ssh/README.md)
 - [typescript](/typescript/README.md)
+- [vscode](/vscode/README.md)
 - [website](/website/README.md)

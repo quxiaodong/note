@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      height: 100%;
+    }
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      inset: 0;
+    }
+    button {
+      width: 50px;
+    }
+    button.active {
+      background: lightgreen;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div>
+      <span>类型：</span>
+      <button data-sku="sex" data-sex="男装">男装</button>
+      <button data-sku="sex" data-sex="女装">女装</button>
+    </div>
+    <div>
+      <span>颜色：</span>
+      <button data-sku="color" data-color="黑色">黑色</button>
+      <button data-sku="color" data-color="白色">白色</button>
+    </div>
+    <div>
+      <span>尺码：</span>
+      <button data-sku="size" data-size="S">S</button>
+      <button data-sku="size" data-size="M">M</button>
+      <button data-sku="size" data-size="L">L</button>
+    </div>
+    <div class="stock">剩余：</div>
+  </div>
+  <script>
+    const array = [ // 后端数据
+      { sex: '男装', color: '黑色', size: 'S', stock: 10 },
+      { sex: '男装', color: '白色', size: 'M', stock: 20 },
+      { sex: '女装', color: '黑色', size: 'M', stock: 30 },
+      { sex: '女装', color: '白色', size: 'S', stock: 40 },
+      { sex: '女装', color: '白色', size: 'M', stock: 50 },
+      { sex: '女装', color: '白色', size: 'L', stock: 60 }
+    ]
+    let result = []
+    const entries = [] // 记录已选中的数据
+
+    document.getElementsByClassName('container')[0].addEventListener('click', e => {
+      const sku = e.target.dataset.sku
+      if (sku === undefined) return
+      const value = e.target.dataset[sku]
+
+      const index = entries.findIndex(item => item[0] === sku)
+      if (index === -1) { // 不存在，添加
+        e.target.classList.add('active')
+        entries.push([sku, value])
+      } else { // 已存在，删除
+        e.target.classList.remove('active')
+        entries.splice(index, 1)
+      }
+
+      result = [...array]
+      entries.forEach(([sku, value]) => {
+        result = result.filter(item => item[sku] === value)
+      })
+      document.getElementsByClassName('stock')[0].innerHTML = result.length === 1
+        ? '剩余：' + result[0].stock
+        : '剩余：'
+
+      ;[...document.querySelectorAll('[data-sku]')].forEach(el => {
+        const sku = el.dataset.sku
+        const value = el.dataset[sku]
+        const index = result.findIndex(item => item[sku] === value)
+        el.disabled = index === -1
+      })
+    })
+  </script>
+</body>
+</html>
