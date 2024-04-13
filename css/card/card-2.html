@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      height: 100%;
+      background-color: rgba(5, 6, 32, 1);
+    }
+    body {
+			gap: 20px;
+			display: flex;
+			flex-wrap: wrap;
+			align-content: center;
+			justify-content: center;
+    }
+		.card {
+			position: relative;
+			width: 25vw;
+			height: 30vh;
+			padding: 2px;
+			overflow: hidden;
+			border-radius: 10px;
+			background-color: rgba(10, 14, 37, 1);
+			border: 1px solid rgba(255, 255, 255, .1);
+		}
+		.card::before {
+			content: '';
+			position: absolute;
+			inset: -2px;
+			width: calc(100% + 4px);
+			height: calc(100% + 4px);
+			background: radial-gradient(25vw circle at var(--x) var(--y), #00dc82 0%, transparent 100%);
+		}
+		.card-body {
+			position: relative;
+			z-index: 1;
+			width: 100%;
+			height: 100%;
+			border-radius: 10px;
+			background-color: rgba(10, 14, 37, 1);
+		}
+  </style>
+</head>
+<body>
+  <div class="card" style="--x: ''; --y: ''">
+		<div class="card-body"></div>
+	</div>
+  <div class="card" style="--x: ''; --y: ''">
+		<div class="card-body"></div>
+	</div>
+	<div class="card" style="--x: ''; --y: ''">
+		<div class="card-body"></div>
+	</div>
+	<div class="card" style="--x: ''; --y: ''">
+		<div class="card-body"></div>
+	</div>
+	<div class="card" style="--x: ''; --y: ''">
+		<div class="card-body"></div>
+	</div>
+	<div class="card" style="--x: ''; --y: ''">
+		<div class="card-body"></div>
+	</div>
+	<script>
+		const cards = document.querySelectorAll('.card')
+		document.addEventListener('mousemove', e => {
+			const x = e.pageX
+			const y = e.pageY
+			for (let i = 0; i < cards.length; i++) {
+				const card = cards[i]
+				const rect = card.getBoundingClientRect()
+				const cardX = rect.left + window.pageXOffset
+				const cardY = rect.top + window.pageYOffset
+				card.style.setProperty('--x', x - cardX + 'px')
+				card.style.setProperty('--y', y - cardY + 'px')
+			}
+		})
+	</script>
+</body>
+</html>
