@@ -20,5 +20,6 @@
 - [scroll-list](/css/scroll-list/README.md)
 - [sticky-footer](/css/sticky-footer/README.md)
 - [tab](/css/tab/README.md)
+- [text-align](/css/text-align/README.md)
 - [timeline](/css/timeline/README.md)
 - [vertical-center](/css/vertical-center/README.md)

@@ -7,3 +7,7 @@
 
 - 重启`typescript`服务
   - mac: `command` + `shift` + `p` --> `TypeScript: Restart TS Server`
+
+#### 常用配置
+
+- [settings](/vscode/settings.md)
