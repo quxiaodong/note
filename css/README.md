@@ -18,6 +18,7 @@
 - [mix-blend-mode](/css/mix-blend-mode/README.md)
 - [radar](/css/radar/README.md)
 - [scroll-list](/css/scroll-list/README.md)
+- [split](/css/split/README.md)
 - [sticky-footer](/css/sticky-footer/README.md)
 - [tab](/css/tab/README.md)
 - [text-align](/css/text-align/README.md)
