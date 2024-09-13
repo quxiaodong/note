@@ -8,6 +8,19 @@ cmd > ssh-add ~/.ssh/gitlab-rsa
 cmd > ssh -T git@gitlab.com
 ```
 
+#### 保存配置
+
+```bash
+cmd > vi config
+```
+
+```
+# GitLab
+Host gitlab.com
+  Preferredauthentications publickey
+  IdentityFile ~/.ssh/gitlab-rsa
+```
+
 > `*.pub`是公钥文件
 
 #### 常用选项
