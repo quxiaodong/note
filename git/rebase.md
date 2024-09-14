@@ -182,6 +182,8 @@ A - B - C - B1
           D - E
 ```
 
+##### 方法一
+
 ```bash
 git checkout main
 # 把B1合进B，会改变B的hash
@@ -189,7 +191,7 @@ git rebase
 git push -f
 
 git checkout development
-# 合并分支
+# 合并分支，不产生合并信息
 git merge main --no-commit
 # 解决冲突
 git push
@@ -198,4 +200,20 @@ git push
 # 顺序匹配main分支
 git rebase
 git push -f
+```
+
+##### 方法二
+
+```bash
+git checkout development
+
+# 使用rebase将development分支基于main分支的最新提交进行重构
+git fetch origin
+git rebase origin/main
+
+# 如果在rebase过程中遇到冲突，按照提示解决冲突后，继续执行
+git rebase --continue
+
+# 完成后，强制推送development分支到远程（因为本地的历史已经重写）
+git push -f origin development
 ```
