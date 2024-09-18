@@ -11,7 +11,7 @@ cmd > ssh -T git@gitlab.com
 #### 保存配置
 
 ```bash
-cmd > vi config
+cmd > vi ~/.ssh/config
 ```
 
 ```
