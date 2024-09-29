@@ -24,3 +24,4 @@
 - [text-align](/css/text-align/README.md)
 - [timeline](/css/timeline/README.md)
 - [vertical-center](/css/vertical-center/README.md)
+- [virtual-list](/css/virtual-list/README.md)

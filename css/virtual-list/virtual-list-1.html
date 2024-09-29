@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      height: 100vh;
+      position: relative;
+      overflow: hidden auto;
+    }
+    .list {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+    .list > div {
+      line-height: 50px;
+      text-align: center;
+      box-shadow: 0 0 1px 1px #eee;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="placeholder"></div>
+    <div class="list"></div>
+  </div>
+  <script>
+    const container = document.querySelector('.container')
+    const list = document.querySelector('.list')
+    const placeholder = document.querySelector('.placeholder')
+
+    // 每项高度
+    const itemHeight = 50
+    // 所有数据
+    const data = Array.from({ length: 10000 }, (v,k) => ({ value: k }))
+    // 占位符高度
+    placeholder.style.height = data.length * itemHeight + 'px'
+    // 列表的项数
+    const visibleCount = Math.ceil(container.offsetHeight / itemHeight)
+
+    function renderItems(startIndex) {
+      list.innerHTML = ''
+      const fragment = document.createDocumentFragment()
+
+      for (let i = startIndex; i < startIndex + visibleCount; i++) {
+        const item = document.createElement('div')
+        item.textContent = `Item 高度固定 ${data[i].value}`
+        fragment.appendChild(item)
+      }
+
+      list.appendChild(fragment)
+    }
+
+    container.addEventListener('scroll', () => {
+      const scrollTop = container.scrollTop
+      const startIndex = Math.floor(scrollTop / itemHeight)
+      const startOffset = scrollTop - (scrollTop % itemHeight)
+
+      list.style.paddingTop = startOffset + 'px'
+      // list.style.transform = `translate3d(0, ${startOffset}px, 0)`
+
+      renderItems(startIndex)
+    })
+
+    renderItems(0)
+  </script>
+</body>
+</html>
