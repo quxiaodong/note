@@ -43,7 +43,7 @@
     // 占位符高度
     placeholder.style.height = data.length * itemHeight + 'px'
     // 列表的项数
-    const visibleCount = Math.ceil(container.offsetHeight / itemHeight)
+    const visibleCount = Math.ceil(container.offsetHeight / itemHeight) + 1
 
     function renderItems(startIndex) {
       list.innerHTML = ''
