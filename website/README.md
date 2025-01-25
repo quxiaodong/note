@@ -6,6 +6,7 @@
 - github.com/mamunhpath/josh.js
 - tweenjs.github.io/tween.js
 - popmotion.io
+- spline.design
 
 #### apis
 
