@@ -1,4 +1,5 @@
 - [ci](/npm/ci.md)
+- [config](/npm/config.md)
 - [info](/npm/info.md)
 - [install](/npm/install.md)
 - [list](/npm/list.md)
