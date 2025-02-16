@@ -51,6 +51,7 @@
 
 - icons8.com/preloaders
 - loading.io
+- css-loaders.com
 
 #### model
 
