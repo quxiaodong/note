@@ -1,5 +1,6 @@
 - [branch](/git/branch.md)
 - [checkout](/git/checkout.md)
+- [clone](/git/clone.md)
 - [commit](/git/commit.md)
 - [config](/git/config.md)
 - [init](/git/init.md)
