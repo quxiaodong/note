@@ -75,6 +75,7 @@ man touch
 | [cd](/linux/cd.md) | change directory | 切换目录 |
 | [clear](/linux/clear.md) | clear | 清屏 |
 | [cp](/linux/cp.md) | copy | 复制文件或文件夹 |
+| [curl](/linux/curl.md) | curl | 在命令行中与服务器进行数据传输 |
 | [firewall-cmd](/linux/firewall-cmd.md) |  | 防火墙配置 |
 | [ln](/linux/ln.md) | link | 创建链接 |
 | [ls](/linux/ls.md) | list | 查看当前目录的内容 |
