@@ -8,6 +8,12 @@
 - 重启`typescript`服务
   - mac: `command` + `shift` + `p` --> `TypeScript: Restart TS Server`
 
+#### 搜索中文
+
+```
+[\u4e00-\u9fa5]
+```
+
 #### 常用配置
 
 - [settings](/vscode/settings.md)
