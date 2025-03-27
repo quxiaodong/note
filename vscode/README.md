@@ -8,10 +8,14 @@
 - 重启`typescript`服务
   - mac: `command` + `shift` + `p` --> `TypeScript: Restart TS Server`
 
-#### 搜索中文
+#### 搜索正则
 
 ```
+# 中文
 [\u4e00-\u9fa5]
+
+# 匹配 :loading="loading"
+:(\w+)="\1"
 ```
 
 #### 常用配置
