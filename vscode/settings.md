@@ -9,3 +9,15 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode" // 默认格式化工具
 }
 ```
+
+```json
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.tabWidth": 2,
+  "prettier.useTabs": false,
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
+  "prettier.arrowParens": "avoid",
+  "prettier.trailingComma": "none"
+}
+```
