@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <style>
+    #progress {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+<body>
+  <div id="progress"></div>
+  <script type="module">
+    function randomArray(length) {
+      const array = []
+      for (let i = 0; i < length; i++) {
+        array.push([i, 'name-' + i])
+      }
+      return array
+    }
+
+    const progressEl = document.getElementById('progress')
+
+    const limit = 200
+    const array = randomArray(100000)
+    const worker = new Worker('worker.js')
+
+    worker.postMessage({ array, limit })
+    worker.onmessage = (event) => {
+      const { type, progress, results } = event.data
+      if (type === 'progress') {
+        progressEl.textContent = (progress / array.length * 100).toFixed(2) + '%'
+      } else if (type === 'result') {
+        console.log(results)
+      }
+    }
+  </script>
+</body>
+</html>
