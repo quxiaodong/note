@@ -19,11 +19,13 @@ async function concurrentLimit(array, limit) {
     executors.add(promise)
 
     if (executors.size >= limit) {
-      self.postMessage({ type: 'progress', progress: results.length })
       await Promise.race(executors)
     }
 
-    promise.finally(() => executors.delete(promise))
+    promise.finally(() => {
+      executors.delete(promise)
+      self.postMessage({ type: 'progress', progress: results.length })
+    })
   }
 
   return Promise.allSettled(results)
