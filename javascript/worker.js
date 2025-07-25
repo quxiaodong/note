@@ -13,19 +13,19 @@ async function concurrentLimit(array, limit) {
   const executors = new Set()
 
   for (const item of array) {
-    const promise = Promise.resolve().then(() => fetchData(item))
-
-    results.push(promise)
-    executors.add(promise)
-
-    if (executors.size >= limit) {
-      await Promise.race(executors)
-    }
-
+    const promise = fetchData(item)
     promise.finally(() => {
       executors.delete(promise)
       self.postMessage({ type: 'progress', progress: results.length })
     })
+
+    results.push(promise)
+    executors.add(promise)
+
+    console.log('executors, limit', executors.size, limit)
+    if (executors.size >= limit) {
+      await Promise.race(executors)
+    }
   }
 
   return Promise.allSettled(results)
