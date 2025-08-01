@@ -5,14 +5,14 @@ scaleX = width / vbWidth
 scaleY = height / vbHeight
 ```
 
-#### preserveAspectRatio="none"
+#### none
 
 ```
 screenX = (elementX - minX) * scaleX
 screenY = (elementY - minY) * scaleY
 ```
 
-#### preserveAspectRatio="xMidYMid meet"
+#### xMidYMid meet
 
 ```
 scale = min(scaleX, scaleY)
