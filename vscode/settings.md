@@ -1,3 +1,8 @@
+```
+# 默认配置文件
+Macos: ~/Library/Application Support/Code/User/settings.json
+```
+
 ```json
 // .vscode/settings.json
 {

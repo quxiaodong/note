@@ -1,8 +1,3 @@
-```
-# 默认配置文件
-Macos: ~/Library/Application Support/Code/User/settings.json
-```
-
 - 自动排序引入的顺序
   - mac: `option` + `shift` + `o`
   - windows: `control` + `shift` + `o`
