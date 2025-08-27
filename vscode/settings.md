@@ -1,6 +1,8 @@
 ```
 # 默认配置文件
-Macos: ~/Library/Application Support/Code/User/settings.json
+Windows: %APPDATA%\Code\User\settings.json
+MacOS: ~/Library/Application Support/Code/User/settings.json
+Linux: ~/.config/Code/User/settings.json
 ```
 
 ```json
