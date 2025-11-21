@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      height: 100%;
+    }
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+  </style>
+</head>
+<body>
+  <button id="resolve">resolve</button>
+  <button id="reject">reject</button>
+  <button id="callback">callback</button>
+  <script>
+    const resolveBtn = document.getElementById('resolve')
+    const rejectBtn = document.getElementById('reject')
+    const callbackBtn = document.getElementById('callback')
+
+    let status
+    let promise = null
+
+    const createPromise = () => {
+      return new Promise((resolve, reject) => {
+        if (status === 'resolve') {
+          resolve('Promise resolved!')
+        } else if (status === 'reject') {
+          reject('Promise rejected!')
+        }
+      })
+    }
+
+    resolveBtn.addEventListener('click', () => {
+      status = 'resolve'
+      promise = createPromise()
+    })
+
+    rejectBtn.addEventListener('click', () => {
+      status = 'reject'
+      promise = createPromise()
+    })
+
+    callbackBtn.addEventListener('click', () => {
+      promise.then((res) => {
+        alert(res)
+      }).catch((err) => {
+        alert(err)
+      })
+    })
+  </script>
+</body>
+</html>
