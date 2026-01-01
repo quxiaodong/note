@@ -41,3 +41,9 @@ cmd > npm install --save-exact webpack
   }
 }
 ```
+
+- `verbose`: 安装进度
+
+```bash
+cmd > npm install --verbose
+```
