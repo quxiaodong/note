@@ -1,6 +1,6 @@
 ```bash
 # 升级
-pnpm add -g pnpm
+pnpm self-update
 
 # 第三方库安装位置
 pnpm store path
