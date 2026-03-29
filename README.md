@@ -10,6 +10,7 @@
 - [mysql](/mysql/README.md)
 - [npm](/npm/README.md)
 - [openlayers](/openlayers/README.md)
+- [pnpm](/pnpm/README.md)
 - [regexp](/regexp/README.md)
 - [ssh](/ssh/README.md)
 - [svg](/svg/README.md)
