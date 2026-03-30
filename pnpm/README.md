@@ -5,3 +5,9 @@ pnpm self-update
 # 第三方库安装位置
 pnpm store path
 ```
+
+```json
+{
+  "preinstall": "npx only-allow pnpm"
+}
+```
