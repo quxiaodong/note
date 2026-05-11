@@ -9,6 +9,7 @@
 - [restore](/git/restore.md)
 - [stash](/git/stash.md)
 - [workspace](/git/workspace.md)
+- [rev-parse](/git/rev-parse.md)
 
 #### 强制拉取代码
 
