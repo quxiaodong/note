@@ -1,63 +1,71 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7/ol.css">
-</head>
-<body>
-  <div class="container-fluid">
-    <div class="card">
-      <div class="card-body">
-        <div id="map" style="height: 50vh;"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7/ol.css" />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card">
+        <div class="card-body">
+          <div id="map" style="height: 50vh"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <button type="button" class="btn btn-primary" onclick="setPosition()">
+            setPosition
+          </button>
+        </div>
       </div>
     </div>
-    <div class="card">
-      <div class="card-body">
-        <button type="button" class="btn btn-primary" onclick="setPosition()">setPosition</button>
+    <template id="template">
+      <div class="toast show">
+        <div class="toast-body">Hello world</div>
       </div>
-    </div>
-  </div>
-  <template id="template">
-    <div class="toast show">
-      <div class="toast-body">Hello world</div>
-    </div>
-  </template>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/ol@v7/dist/ol.js"></script>
-  <script>
-    const map = new ol.Map({
-      target: 'map',
-      view: new ol.View({
-        projection: 'EPSG:4326',
-        center: [0, 0],
-        zoom: 0
-      }),
-      layers: [
-        new ol.layer.Tile({
-          source: new ol.source.OSM()
-        })
-      ]
-    })
+    </template>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ol@v7/dist/ol.js"></script>
+    <script>
+      const map = new ol.Map({
+        target: 'map',
+        view: new ol.View({
+          projection: 'EPSG:4326',
+          center: [0, 0],
+          zoom: 0,
+        }),
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM(),
+          }),
+        ],
+      })
 
-    const overlay = new ol.Overlay({
-      element: document.getElementById('template').content,
-      position: [0, 0],
-      positioning: 'bottom-center'
-    })
+      const overlay = new ol.Overlay({
+        element: document.getElementById('template').content,
+        position: [0, 0],
+        positioning: 'bottom-center',
+      })
 
-    map.addOverlay(overlay)
+      map.addOverlay(overlay)
 
-    overlay.on('change:position', () => {
-      console.log('change:position')
-    })
+      overlay.on('change:position', () => {
+        console.log('change:position')
+      })
 
-    let x = 0
-    function setPosition() {
-      x += 1
-      overlay.setPosition([x, 0])
-    }
-  </script>
-</body>
+      let x = 0
+      function setPosition() {
+        x += 1
+        overlay.setPosition([x, 0])
+      }
+    </script>
+  </body>
 </html>

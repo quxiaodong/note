@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "prepare": "husky",
+    "formatter": "npx prettier . --write"
+  },
+  "lint-staged": {
+    "*.{html,css,md,markdown,json,yml,yaml}": "prettier --write"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "prettier": "^3.10.1"
+  }
+}

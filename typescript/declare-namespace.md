@@ -1,19 +1,14 @@
 ```json
 // tsconfig.json
 {
-  "include": [
-    "typings/**/*.d.ts"
-  ]
+  "include": ["typings/**/*.d.ts"]
 }
 ```
 
 ```typescript
 // typings/wx.d.ts
 declare namespace wx {
-
-  type jsApi = 'chooseImage'
-    | 'getLocation'
-    | 'openLocation'
+  type jsApi = 'chooseImage' | 'getLocation' | 'openLocation'
 
   interface ConfigOptions {
     debug?: boolean // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
@@ -32,7 +27,6 @@ declare namespace wx {
 
   // 通过error接口处理失败验证
   function error(callback: (res: any) => void): void
-
 }
 ```
 
@@ -42,7 +36,7 @@ wx.config({
   timestamp: Date.now(),
   nonceStr: '',
   signature: '',
-  jsApiList: ['getLocation', 'openLocation']
+  jsApiList: ['getLocation', 'openLocation'],
 })
 
 wx.ready(() => {})

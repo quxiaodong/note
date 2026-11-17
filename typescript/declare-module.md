@@ -1,18 +1,16 @@
 ```json
 // tsconfig.json
 {
-  "include": [
-    "typings/**/*.d.ts"
-  ]
+  "include": ["typings/**/*.d.ts"]
 }
 ```
 
 ```typescript
 // typings/fp.d.ts
 declare module 'find-free-port' {
-  function fp (
+  function fp(
     port: number,
-    callback: (error: Error, port: number) => void
+    callback: (error: Error, port: number) => void,
   ): void
 
   export = fp

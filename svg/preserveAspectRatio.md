@@ -1,8 +1,7 @@
 ```html
 <svg width="width" height="height" viewBox="minX minY vbWidth vbHeight"></svg>
 
-scaleX = width / vbWidth
-scaleY = height / vbHeight
+scaleX = width / vbWidth scaleY = height / vbHeight
 ```
 
 #### none

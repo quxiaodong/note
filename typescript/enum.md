@@ -4,7 +4,7 @@
 enum ColorEnum {
   red,
   green,
-  orange
+  orange,
 }
 ```
 
@@ -20,7 +20,7 @@ type ColorValue = `${ColorEnum}` // "0" | "1" | "2"
 ```typescript
 enum Color {
   red = 'Red',
-  green = 'Green'
+  green = 'Green',
 }
 
 // 此时，color可以添加新属性
@@ -36,7 +36,7 @@ const color: typeof Color = { ...Color, yellow: 'Yellow' } // 报错
 ```typescript
 enum Color {
   Red = 'red',
-  Green = 'green'
+  Green = 'green',
 }
 
 type ColorType = Color

@@ -58,34 +58,34 @@ man ls
 man touch
 ```
 
-| 操作 | 功能 |
-| - | - |
-| 空格 | 显示手册页的下一屏 |
-| 回车 | 一次滚动手册页的一行 |
-| b | back，回滚一屏 |
-| f | front，前滚一屏 |
-| q | quit，退出 |
-| /word | 搜索word字符串 |
+| 操作  | 功能                 |
+| ----- | -------------------- |
+| 空格  | 显示手册页的下一屏   |
+| 回车  | 一次滚动手册页的一行 |
+| b     | back，回滚一屏       |
+| f     | front，前滚一屏      |
+| q     | quit，退出           |
+| /word | 搜索word字符串       |
 
 #### 常用命令
 
-| 命令 | 英文 | 作用 |
-| - | - | - |
-| [cat](/linux/cat.md) | concatenate | 查看文件内容、创建文件、文件合并、追加文件内容 |
-| [cd](/linux/cd.md) | change directory | 切换目录 |
-| [clear](/linux/clear.md) | clear | 清屏 |
-| [cp](/linux/cp.md) | copy | 复制文件或文件夹 |
-| [curl](/linux/curl.md) | curl | 在命令行中与服务器进行数据传输 |
-| [firewall-cmd](/linux/firewall-cmd.md) |  | 防火墙配置 |
-| [ln](/linux/ln.md) | link | 创建链接 |
-| [ls](/linux/ls.md) | list | 查看当前目录的内容 |
-| [mkdir](/linux/mkdir.md) | make directory | 新建文件夹 |
-| [more](/linux/more.md) | more | 分屏显示文件内容 |
-| [mv](/linux/mv.md) | move | 移动或重命名文件和文件夹 |
-| [ping](/linux/ping.md) | ping | 测试网络连接 |
-| [pwd](/linux/pwd.md) | print work directory | 查看当前目录的路径 |
-| [rm](/linux/rm.md) | remove | 删除文件或文件夹，删除后不能恢复 |
-| [tar](/linux/tar.md) | tape archive | 归档解档文件 |
-| [touch](/linux/touch.md) | touch | 新建文件 |
-| [tree](/linux/tree.md) | tree | 以树状图的形式列出文件目录结构 |
-| [vi](/linux/vi.md) | visual interface | 文本编辑器 |
+| 命令                                   | 英文                 | 作用                                           |
+| -------------------------------------- | -------------------- | ---------------------------------------------- |
+| [cat](/linux/cat.md)                   | concatenate          | 查看文件内容、创建文件、文件合并、追加文件内容 |
+| [cd](/linux/cd.md)                     | change directory     | 切换目录                                       |
+| [clear](/linux/clear.md)               | clear                | 清屏                                           |
+| [cp](/linux/cp.md)                     | copy                 | 复制文件或文件夹                               |
+| [curl](/linux/curl.md)                 | curl                 | 在命令行中与服务器进行数据传输                 |
+| [firewall-cmd](/linux/firewall-cmd.md) |                      | 防火墙配置                                     |
+| [ln](/linux/ln.md)                     | link                 | 创建链接                                       |
+| [ls](/linux/ls.md)                     | list                 | 查看当前目录的内容                             |
+| [mkdir](/linux/mkdir.md)               | make directory       | 新建文件夹                                     |
+| [more](/linux/more.md)                 | more                 | 分屏显示文件内容                               |
+| [mv](/linux/mv.md)                     | move                 | 移动或重命名文件和文件夹                       |
+| [ping](/linux/ping.md)                 | ping                 | 测试网络连接                                   |
+| [pwd](/linux/pwd.md)                   | print work directory | 查看当前目录的路径                             |
+| [rm](/linux/rm.md)                     | remove               | 删除文件或文件夹，删除后不能恢复               |
+| [tar](/linux/tar.md)                   | tape archive         | 归档解档文件                                   |
+| [touch](/linux/touch.md)               | touch                | 新建文件                                       |
+| [tree](/linux/tree.md)                 | tree                 | 以树状图的形式列出文件目录结构                 |
+| [vi](/linux/vi.md)                     | visual interface     | 文本编辑器                                     |

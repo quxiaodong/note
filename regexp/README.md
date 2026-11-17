@@ -26,8 +26,8 @@ console.log('a\\c') // a\c
 // xss
 const rawInput = "hello <script>alert('xss')</script> world"
 const regexp = /[\<\>]/g
-const input = rawInput.replaceAll(regexp, function(value) {
-  switch(value) {
+const input = rawInput.replaceAll(regexp, function (value) {
+  switch (value) {
     case '<':
       return '&lt;'
     case '>':

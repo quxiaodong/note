@@ -6,7 +6,7 @@ interface Person {
 
 const person: Person = {
   age: 18,
-  name: 'Nicholas'
+  name: 'Nicholas',
 }
 ```
 

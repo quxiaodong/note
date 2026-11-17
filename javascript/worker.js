@@ -1,6 +1,6 @@
 function fetchData(item) {
   item[2] = new Date()
-  return new Promise((resolve) => {
+  return new Promise(resolve => {
     setTimeout(() => {
       item[3] = new Date()
       resolve(item)
@@ -31,7 +31,7 @@ async function concurrentLimit(array, limit) {
   return Promise.allSettled(results)
 }
 
-self.onmessage = async (event) => {
+self.onmessage = async event => {
   const { array, limit } = event.data
 
   const results = await concurrentLimit(array, limit)

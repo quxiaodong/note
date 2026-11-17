@@ -30,10 +30,10 @@ import bus from './bus'
 import { getUserInfo } from './storage'
 
 const oldPage = Page
-Page = function(params) {
+Page = function (params) {
   const { onShow, onLoad, onReady } = params
 
-  params.onShow = function() {
+  params.onShow = function () {
     if (!!getUserInfo()) {
       onShow && onShow.call(this)
     } else {
@@ -43,7 +43,7 @@ Page = function(params) {
     }
   }
 
-  params.onLoad = function(options) {
+  params.onLoad = function (options) {
     if (!!getUserInfo()) {
       onLoad && onLoad.call(this, options)
     } else {
@@ -53,7 +53,7 @@ Page = function(params) {
     }
   }
 
-  params.onReady = function() {
+  params.onReady = function () {
     if (!!getUserInfo()) {
       onReady && onReady.call(this)
     } else {
@@ -86,7 +86,7 @@ App({
         bus.emit('login')
       }, 2000)
     }
-  }
+  },
 })
 ```
 
@@ -94,7 +94,7 @@ App({
 // /pages/detail/index
 Page({
   data: {
-    msg: 'detail'
+    msg: 'detail',
   },
   onShow() {
     console.log(this.data.msg + ' onShow')
@@ -104,6 +104,6 @@ Page({
   },
   onReady() {
     console.log(this.data.msg + ' onReady')
-  }
+  },
 })
 ```

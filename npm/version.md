@@ -1,14 +1,14 @@
 npm中的包模块版本遵循[SemVer](https://semver.org/)（Semantic Version，语义化版本）规范。这是由 Github 起草的一个具有指导意义的，统一的版本号表示规则。
 
-| 版本名称 | 介绍 | 说明 |
-| - | - | - |
-| alpha | 内测版 | 内部测试版，不向外部发布 |
-| beta | 公测版 | 这个阶段的版本会一直加入新的功能 |
-| experimental | 实验版 |  |
-| latest | 默认版 | 不指定版本情况下默认安装的最新版本 |
-| next | 下一版 |  |
-| rc | 候选版 | 几乎不会加入新的功能，而主要着重于除错 |
-| release | 正式版 | 稳定版本 |
+| 版本名称     | 介绍   | 说明                                   |
+| ------------ | ------ | -------------------------------------- |
+| alpha        | 内测版 | 内部测试版，不向外部发布               |
+| beta         | 公测版 | 这个阶段的版本会一直加入新的功能       |
+| experimental | 实验版 |                                        |
+| latest       | 默认版 | 不指定版本情况下默认安装的最新版本     |
+| next         | 下一版 |                                        |
+| rc           | 候选版 | 几乎不会加入新的功能，而主要着重于除错 |
+| release      | 正式版 | 稳定版本                               |
 
 ```bash
 # major.minor.patch-{identifier}.{identifier}.{identifier}
@@ -48,7 +48,9 @@ import { engines } from './package'
 
 const version = engines.node
 if (!semver.satisfies(process.version, version)) {
-  console.log(`Required node version ${version} not satisfied with current version ${process.version}.`)
+  console.log(
+    `Required node version ${version} not satisfied with current version ${process.version}.`,
+  )
   process.exit(1)
 }
 ```

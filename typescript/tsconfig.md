@@ -92,11 +92,13 @@ export const sum = (a, b) => a + b
 ```
 
 ```javascript
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.sum = void 0;
-var sum = function (a, b) { return a + b; };
-exports.sum = sum;
+'use strict'
+Object.defineProperty(exports, '__esModule', { value: true })
+exports.sum = void 0
+var sum = function (a, b) {
+  return a + b
+}
+exports.sum = sum
 ```
 
 ```json
@@ -108,13 +110,15 @@ exports.sum = sum;
 ```
 
 ```javascript
-define(["require", "exports"], function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.sum = void 0;
-    var sum = function (a, b) { return a + b; };
-    exports.sum = sum;
-});
+define(['require', 'exports'], function (require, exports) {
+  'use strict'
+  Object.defineProperty(exports, '__esModule', { value: true })
+  exports.sum = void 0
+  var sum = function (a, b) {
+    return a + b
+  }
+  exports.sum = sum
+})
 ```
 
 #### noLib
@@ -175,7 +179,9 @@ const sum = (a, b) => a + b
 ```
 
 ```javascript
-var sum = function (a, b) { return a + b; };
+var sum = function (a, b) {
+  return a + b
+}
 ```
 
 ```json
@@ -187,7 +193,7 @@ var sum = function (a, b) { return a + b; };
 ```
 
 ```javascript
-const sum = (a, b) => a + b;
+const sum = (a, b) => a + b
 ```
 
 #### typeRoots

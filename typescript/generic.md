@@ -1,5 +1,5 @@
 ```typescript
-const promise = new Promise<string>((resolve) => {
+const promise = new Promise<string>(resolve => {
   resolve('Hello World')
 })
 

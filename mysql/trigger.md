@@ -26,6 +26,7 @@ mysql> CREATE TRIGGER 触发器名
 > - `AFTER`: 在执行操作后调用触发器内容
 
 > 对每条受影响的记录执行触发器内容时，提供了`NEW`和`OLD`代表新老记录
+>
 > - `INSERT`: NEW代表准备插入的记录，OLD无效
 > - `DELETE`: OLD代表删除前的记录，NEW无效
 > - `UPDATE`: NEW代表修改后的记录，OLD代表修改前的记录

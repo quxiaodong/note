@@ -1,7 +1,7 @@
 ```typescript
 const person = {
   age: 28,
-  name: 'Nicholas'
+  name: 'Nicholas',
 }
 
 type Person = typeof person
