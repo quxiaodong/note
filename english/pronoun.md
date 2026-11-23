@@ -1,12 +1,12 @@
-| 主体 | be  | 缩写    | possessive adjective | possessive pronoun |
-| ---- | --- | ------- | -------------------- | ------------------ |
-| I    | am  | I'm     | My                   | Mine               |
-| You  | are | You're  | Your                 | Yours              |
-| He   | is  | He's    | His                  | His                |
-| She  | is  | She's   | Her                  | Hers               |
-| It   | is  | It's    | Its                  | -                  |
-| We   | are | We're   | Our                  | Ours               |
-| They | are | They're | Their                | Theirs             |
+| 主体 | be  | 缩写    | possessive<br>adjective | possessive<br>pronoun | have/has | not have/has |
+| ---- | --- | ------- | ----------------------- | --------------------- | -------- | ------------ |
+| I    | am  | I'm     | My                      | Mine                  | have     | don't have   |
+| You  | are | You're  | Your                    | Yours                 | have     | don't have   |
+| He   | is  | He's    | His                     | His                   | has      | doesn't have |
+| She  | is  | She's   | Her                     | Hers                  | has      | doesn't have |
+| It   | is  | It's    | Its                     | -                     | has      | doesn't have |
+| We   | are | We're   | Our                     | Ours                  | have     | don't have   |
+| They | are | They're | Their                   | Theirs                | have     | don't have   |
 
 ```
 I am a student.
@@ -34,6 +34,10 @@ Yes, he is.
 No, he isn't.
 No, he's not.
 No, he is not.
+
+Does he have a hat?
+Yes, he does.
+No, he doesn't.
 ```
 
 ```
@@ -76,4 +80,8 @@ Yes, they are.
 No, they aren't.
 No, they're not.
 No, they are not.
+
+Do they have a car?
+Yes, they do.
+No, they don't.
 ```
