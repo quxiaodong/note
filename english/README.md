@@ -12,5 +12,6 @@
 
 - [vowel](/english/vowel.md)
 - [plural](/english/plural.md)
+- [tense](/english/tense.md)
 - [in](/english/in.md)
 - [on](/english/on.md)
