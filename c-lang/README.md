@@ -50,4 +50,9 @@ int main()
 }
 ```
 
+- [gcc](/c-lang/gcc.md)
 - [module](/c-lang/module.md)
+
+#### stdio.h
+
+- [printf](/c-lang/printf.md)
